@@ -8,7 +8,7 @@
 
 
 ## User Stories
-- [ ] Visitors should be able to visit the home page - 2hrs
+- [x] Visitors should be able to visit the home page - 2hrs
 - [ ] Visitors should be able to search jobs via search bar and tags - 16hrs
 - [ ] Visitors should be able to sign up - 4hrs
 - [ ] Visitors should receive welcome e-mail - 4hrs
@@ -26,11 +26,11 @@
 ## Tasks
 
 ### Visitors should be able to visit the home page
-- [ ] Setup Rails app
-- [ ] Configure my root route
-- [ ] Create my welcome controller and welcome/home page
-- [ ] Setup GitHub repo
-- [ ] Setup initial Heroku app and push it
+- [x] Setup Rails app
+- [x] Configure my root route
+- [x] Create my welcome controller and welcome/home page
+- [x] Setup GitHub repo
+- [x] Setup initial Heroku app and push it
 
 ### Create all models
 - [ ] Create Company
@@ -41,19 +41,18 @@
 - [ ] Create a session controller
 - [ ] Create a signup route and action
 - [ ] Create a signup form
-- [ ] Create an action to create the user upon signup
 - [ ] Add validations to Company model
-- [ ] Add link on home page/nav to sign up
+- [ ] Add link on home page/nav to post job
 
 ### Company should be able to upload company logo to a job post
-- [ ] Install carrierwave gem
+- [x] Install carrierwave gem
 - [ ] Create an uploader
 - [ ] Setup the initializer
 - [ ] Setup S3 security
 - [ ] Setup S3 bucket
-- [ ] Setup .env file (add to gitignore)
-- [ ] Install fog gem
-- [ ] Install minimagic gem
+- [x] Setup .env file (add to gitignore)
+- [x] Install fog gem
+- [x] Install minimagic gem
 - [ ] Modify the user form with a file field and cache field
 - [ ] Adjust the controller params
 
@@ -62,9 +61,9 @@
 - [ ] Create seed file for fake jobs
 
 ## Technologies
-- [ ] S3
-- [ ] Carrierwave / Fog
-- [ ] Environment variables (.env, dotenv gem)
+- [x] S3
+- [x] Carrierwave / Fog
+- [x] Environment variables (.env, dotenv gem)
 - [ ] Kaminari for pagination
 - [ ] bcrypt
 - [ ] Search engine (make one like we did with pinterest app)
@@ -90,14 +89,14 @@
 
 ##Things to Consider
 ###Heroku
-- [ ] Add Thin and Rails12Factor gems
-- [ ] Create procfile and add this `web: bundle exec thin start -p $PORT
+- [x] Add Thin and Rails12Factor gems
+- [x] Create procfile and add this `web: bundle exec thin start -p $PORT
 `
 
 ###.env
-- [ ] Add dotenv-rails gem
-- [ ] Add .env to .gitignore folder
-- [ ] Add environmentals to Heroku
+- [x] Add dotenv-rails gem
+- [x] Add .env to .gitignore folder
+- [x] Add environmentals to Heroku
 
 ## Gems Needed
 ```ruby
