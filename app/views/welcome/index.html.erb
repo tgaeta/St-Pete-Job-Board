@@ -5,7 +5,7 @@
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <form class="navbar-form navbar-right">
-      <a class="btn-btn-success" type="submit" href="/jobs_path/new" role="button">Post a Job &raquo;</a>
+      <%= link_to "Employers", new_company_path, class: "btn-btn-success", role: "button" %>
   </div>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -28,10 +28,10 @@
 <!-- Example row of columns -->
 <div class="row">
   <div class="col-md-8">
-    <h2>Jobs Around the Burg:</h2>
+    <h2>Jobs Around The Burg:</h2>
     <% @jobs.each do |job| %>
       <div class="bs-callout bs-callout-primary">
-        <h4><%= link_to job.company.name, job_posts_path %></h4>
+        <h4><%= link_to job.job_title + " | " + job.company.name, company_job_post_path(job.company, job) %></h4>
         <p><%= job.job_description.truncate(100) %>
         <p class="label label-info"><%= job.job_tag.upcase %></p>
       </div>

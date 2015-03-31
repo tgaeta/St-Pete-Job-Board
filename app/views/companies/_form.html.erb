@@ -1,4 +1,4 @@
-<%= bootstrap_form_for(@company) do |f| %>
+<%= bootstrap_form_for @company, :html => {:multipart => true} do |f| %>
   <%= f.alert_message "Please fix the following errors." %>
   <%= f.text_field :name, label: "Company Name *" %>
   <%= f.email_field :email, label: "E-mail *" %>

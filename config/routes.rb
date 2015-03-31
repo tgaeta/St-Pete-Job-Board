@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
 
-  resources :companies
-  resources :job_posts
-  
+  resources :companies do
+    resources :job_posts
+  end
+
 
   root 'welcome#index'
 
