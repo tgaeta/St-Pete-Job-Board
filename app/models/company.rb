@@ -1,4 +1,5 @@
 class Company < ActiveRecord::Base
+  had_many :job_posts
   has_secure_password
   validates :name, presence: true
   validates :email, presence: true,
