@@ -1,11 +1,11 @@
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
   <div class="navbar-header">
-    <a class="navbar-brand" href="#">jobs.stpete.io</a>
+    <a class="navbar-brand" href="/">jobs.stpete.io</a>
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <form class="navbar-form navbar-right">
-    <button type="submit" class="btn btn-success">Post a Job</button>
+      <a class="btn-btn-success" type="submit" href="/jobs_path/new" role="button">Post a Job &raquo;</a>
   </div>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
@@ -17,7 +17,7 @@
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for...">
         <span class="input-group-btn">
-        <button class="btn btn-default" type="button">Go!</button>
+        <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </span>
       </div>
       <!-- /input-group -->
@@ -27,10 +27,17 @@
 <div class="container">
 <!-- Example row of columns -->
 <div class="row">
-<div class="col-md-8">
-  <h2>Jobs</h2>
-  <p>Description: Donec id elit non mi porta gravida at eget metus.</p>
-</div>
+  <div class="col-md-8">
+    <h2>Jobs Around the Burg:</h2>
+    <% @jobs.each do |job| %>
+      <div class="bs-callout bs-callout-primary">
+        <h4><%= link_to job.company.name, job_posts_path %></h4>
+        <p><%= job.job_description.truncate(100) %>
+        <p class="label label-info"><%= job.job_tag.upcase %></p>
+      </div>
+    <% end %>
+  </div>
+
 <vr>
 <div class="col-md-4">
   <h2>Sidebar</h2>

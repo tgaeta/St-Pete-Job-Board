@@ -1,8 +1,8 @@
 <%= bootstrap_form_for(@job_post) do |f| %>
   <%= f.alert_message "Please fix the following errors." %>
   <%= f.text_field :job_title, label: "Position Title *" %>
-  <%= f.text_area :job_description, label: "Describe the Position *" %>
-  <%= f.text_field :job_tag, label: "Tag", help: "Tag this biotch" %>
+  <%= f.text_area :job_description, label: "Describe the Position *", help: "Minimum 100 characters" %>
+  <%= f.text_field :job_tag, label: "Tag *", help: "Tag this biotch" %>
   <%= f.text_field :company_id, label: "Company Id" %>
   <%= f.submit "Continue" %>
 <% end %>
