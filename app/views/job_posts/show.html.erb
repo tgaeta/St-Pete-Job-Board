@@ -2,8 +2,7 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Logo:</strong>
-  <%= @job_post.logo %>
+  <%= image_tag(@company.logo, class: "img-responsive") %>
 </p>
 
 <p>
@@ -23,6 +22,6 @@
 
 <p>
   <strong>Company:</strong>
-  <%= @job_post.company %>
+  <%= @job_post.company.name %>
 </p>
 </div>

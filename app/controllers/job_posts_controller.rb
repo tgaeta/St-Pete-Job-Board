@@ -11,6 +11,7 @@ class JobPostsController < ApplicationController
   # GET /job_posts/1
   # GET /job_posts/1.json
   def show
+    @job_posts = @company.job_posts
   end
 
   # GET /job_posts/new
