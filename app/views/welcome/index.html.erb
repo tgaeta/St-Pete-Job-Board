@@ -5,7 +5,12 @@
   </div>
   <div id="navbar" class="navbar-collapse collapse">
     <form class="navbar-form navbar-right">
-      <%= link_to "Employers", new_company_path, class: "btn-btn-success", role: "button" %>
+      <% if !signed_in? %>
+        <li><%= link_to 'Sign In', session_form_path %></li>
+        <li><%= link_to 'Sign Up', new_company_path %></li>
+      <% else %>
+        <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
+      <% end %>
   </div>
 </nav>
 <!-- Main jumbotron for a primary marketing message or call to action -->
