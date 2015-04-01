@@ -19,9 +19,9 @@
 - [ ] Companies should be able to pay for a job post and post it - 3 hrs
 - [x] Companies should be able to edit their job post - 4hrs
 - [x] Companies should be able to visit their posting
-- [ ] Admins should be able to visit the admin section - 2hrs
-- [ ] Admin should be able to CRUD job posts
-- [ ] Admin should be able to CRUD companies
+- [x] Admins should be able to visit the admin section - 2hrs
+- [x] Admin should be able to CRUD job posts
+- [x] Admin should be able to CRUD companies
 
 ## Tasks
 
@@ -66,7 +66,7 @@
 - [ ] Kaminari for pagination
 - [x] bcrypt
 - [ ] Search engine (make one like we did with pinterest app)
-- [ ] Active admin
+- [x] Active admin
 - [x] Add SendGrid from Heroku
 - [ ] Visitors can Apply to Job
 
