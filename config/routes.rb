@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  ActiveAdmin.routes(self)
   get 'session/form'
   post 'session/sign_in'
   delete 'session/sign_out'

@@ -19,6 +19,7 @@ gem 'bcrypt'
 gem 'bootstrap_form'
 gem 'carrierwave', '~> 0.10.0'
 gem 'neat'
+gem 'activeadmin', github: 'activeadmin'
 
 group :production do
   gem 'rails_12factor'
