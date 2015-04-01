@@ -28,6 +28,7 @@ class CompaniesController < ApplicationController
 
     respond_to do |format|
       if @company.save
+        CompanyMailer.welcome_email(@company).deliver_later
         format.html { redirect_to @company, notice: 'Company was successfully created.' }
         format.json { render :show, status: :created, location: @company }
       else
