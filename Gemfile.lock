@@ -201,6 +201,9 @@ GEM
       minitest (>= 5.0)
       ruby-progressbar
     multi_json (1.11.0)
+    neat (1.7.2)
+      bourbon (>= 4.0)
+      sass (>= 3.3)
     net-scp (1.2.1)
       net-ssh (>= 2.6.5)
     net-ssh (2.9.2)
@@ -312,6 +315,7 @@ DEPENDENCIES
   mini_magick
   minitest
   minitest-reporters
+  neat
   pg
   pry
   quiet_assets

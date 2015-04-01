@@ -18,6 +18,7 @@ gem 'bourbon'
 gem 'bcrypt'
 gem 'bootstrap_form'
 gem 'carrierwave', '~> 0.10.0'
+gem 'neat'
 
 group :production do
   gem 'rails_12factor'

@@ -1,50 +1,38 @@
-<nav class="navbar navbar-inverse navbar-fixed-top">
-  <div class="container">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="/">jobs.stpete.io</a>
-  </div>
-  <div id="navbar" class="navbar-collapse collapse">
-    <form class="navbar-form navbar-right">
-      <% if !signed_in? %>
-        <li><%= link_to 'Sign In', session_form_path %></li>
-        <li><%= link_to 'Sign Up', new_company_path %></li>
-      <% else %>
-        <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
-      <% end %>
-  </div>
-</nav>
-<!-- Main jumbotron for a primary marketing message or call to action -->
-<div class="jumbotron">
-  <div class="container">
-    <h1>
-    background image of st. pete</p>
-    <div class="col-lg-8">
+<div class="bg-with-search">
+<%= image_tag('dtsp.jpg', class: "img-responsive") %>
+<!-- <div class="jumbotron"> -->
+  <div class="search-container">
+    <div class="col-md-8 col-md-offset-2">
       <div class="input-group">
         <input type="text" class="form-control" placeholder="Search for...">
         <span class="input-group-btn">
         <button class="btn btn-default" type="button"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </span>
       </div>
-      <!-- /input-group -->
     </div>
   </div>
+<!-- </div> -->
 </div>
 <div class="container">
-<!-- Example row of columns -->
-<div class="row">
-  <div class="col-md-8">
-    <h2>Jobs Around The Burg:</h2>
-    <% @jobs.each do |job| %>
-      <div class="bs-callout bs-callout-primary">
-        <h4><%= link_to job.job_title + " | " + job.company.name, company_job_post_path(job.company, job) %></h4>
-        <p><%= job.job_description.truncate(100) %>
-        <p class="label label-info"><%= job.job_tag.upcase %></p>
-      </div>
-    <% end %>
+  <div class="row">
+    <div class="col-md-8">
+      <h2>Jobs Around The Burg:</h2>
+      <% @jobs.each do |job| %>
+        <div class="bs-callout bs-callout-primary">
+          <h4><%= link_to job.job_title + " | " + job.company.name, company_job_post_path(job.company, job) %></h4>
+          <p><%= job.job_description.truncate(100) %>
+          <p class="label label-info"><%= job.job_tag.upcase %></p>
+        </div>
+      <% end %>
+    </div>
+    <div class="col-md-4">
+      <h2>Sidebar</h2>
+      <% if !signed_in? %>
+      <p><%= link_to 'Sign In', session_form_path %></p>
+      <p><%= link_to 'Sign Up', new_company_path %></p>
+      <% else %>
+      <p><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></p>
+      <% end %>
+    </div>
   </div>
-
-<vr>
-<div class="col-md-4">
-  <h2>Sidebar</h2>
-  <p>Some ish.</p>
 </div>
