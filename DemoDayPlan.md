@@ -1,8 +1,8 @@
 # App Idea: Job Board
 
 ## The Gist:
-- [ ] Companies can Sign Up
-- [ ] Companies can Post a Job
+- [x] Companies can Sign Up
+- [x] Companies can Post a Job
 - [ ] Visitors can search for a job through tags or search bar
 - [ ] Visitors can Apply to Job
 
@@ -10,15 +10,15 @@
 ## User Stories
 - [x] Visitors should be able to visit the home page - 2hrs
 - [ ] Visitors should be able to search jobs via search bar and tags - 16hrs
-- [ ] Visitors should be able to sign up - 4hrs
-- [ ] Visitors should receive welcome e-mail - 4hrs
-- [ ] Visitors should be able to sign in - 1hr
-- [ ] Companies should be able to sign out - 1hr
-- [ ] Companies should be able to create a job post - 3 hrs
+- [x] Visitors should be able to sign up - 4hrs
+- [x] Visitors should receive welcome e-mail - 4hrs
+- [x] Visitors should be able to sign in - 1hr
+- [x] Companies should be able to sign out - 1hr
+- [x] Companies should be able to create a job post - 3 hrs
 - [ ] Companies should be able to preview a job post - 3 hrs
 - [ ] Companies should be able to pay for a job post and post it - 3 hrs
-- [ ] Companies should be able to edit their job post - 4hrs
-- [ ] Companies should be able to visit their posting
+- [x] Companies should be able to edit their job post - 4hrs
+- [x] Companies should be able to visit their posting
 - [ ] Admins should be able to visit the admin section - 2hrs
 - [ ] Admin should be able to CRUD job posts
 - [ ] Admin should be able to CRUD companies
@@ -33,31 +33,30 @@
 - [x] Setup initial Heroku app and push it
 
 ### Create all models
-- [ ] Create Company
-- [ ] Create JobPost
+- [x] Create Company
+- [x] Create JobPost
 
 ### Visitors should be able to sign up
-- [ ] Create a Company model and migration
-- [ ] Create a session controller
-- [ ] Create a signup route and action
-- [ ] Create a signup form
-- [ ] Add validations to Company model
-- [ ] Add link on home page/nav to post job
+- [x] Create a Company model and migration
+- [x] Create a session controller
+- [x] Create a signup route and action
+- [x] Create a signup form
+- [x] Add validations to Company model
+- [x] Add link on home page/nav to post job
 
 ### Company should be able to upload company logo to a job post
 - [x] Install carrierwave gem
-- [ ] Create an uploader
-- [ ] Setup the initializer
-- [ ] Setup S3 security
-- [ ] Setup S3 bucket
+- [x] Create an uploader
+- [x] Setup the initializer
+- [x] Setup S3 security
+- [x] Setup S3 bucket
 - [x] Setup .env file (add to gitignore)
 - [x] Install fog gem
 - [x] Install minimagic gem
-- [ ] Modify the user form with a file field and cache field
-- [ ] Adjust the controller params
+
 
 ### Users should be able to browse jobs (paginated)
-- [ ] Create a JobPost model and migration
+- [x] Create a JobPost model and migration
 - [ ] Create seed file for fake jobs
 
 ## Technologies
@@ -65,10 +64,10 @@
 - [x] Carrierwave / Fog
 - [x] Environment variables (.env, dotenv gem)
 - [ ] Kaminari for pagination
-- [ ] bcrypt
+- [x] bcrypt
 - [ ] Search engine (make one like we did with pinterest app)
 - [ ] Active admin
-- [ ] Add SendGrid from Heroku
+- [x] Add SendGrid from Heroku
 - [ ] Visitors can Apply to Job
 
 
@@ -77,15 +76,15 @@
 - [ ] Javascript - Don't know a whole lot about it
 
 ## Data / Models
-- [ ] Company: name, email, password, logo, bio
-- [ ] JobPost: company_name, company_logo, job_title, job_body, job_tag
+- [x] Company: name, email, password, logo, bio
+- [x] JobPost: company_name, company_logo, job_title, job_body, job_tag
 
 ## Controllers
-- [ ] Welcome
-- [ ] Company
-- [ ] Job Posts
+- [x] Welcome
+- [x] Company
+- [x] Job Posts
 - [ ] Search
-- [ ] Session
+- [x] Session
 
 ##Things to Consider
 ###Heroku
