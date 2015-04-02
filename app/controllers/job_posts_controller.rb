@@ -1,35 +1,34 @@
 class JobPostsController < ApplicationController
   before_action :set_company
-  before_action :set_job_post, only: [:show, :edit, :update, :destroy]
+  before_action :set_job_post, only: [:show, :edit, :update, :destroy, :apply]
+  before_action :set_job_applicant, only: [:show]
 
-  # GET /job_posts
-  # GET /job_posts.json
   def apply
-    CompanyMailer.job_applicant(@company).deliver_later
-    redirect_to root_path, notice: 'sweet... you applied'
+    @job_application = @job_post.job_applications.new(job_application_params)
+    if @job_application.save
+      CompanyMailer.job_applicant(@company).deliver_later
+      redirect_to [@company, @job_post], notice: 'Your application has been successfully submitted!'
+    else
+      @auto_show_modal = true
+      render :show
+    end
   end
 
   def index
     @job_posts = @company.job_posts
   end
 
-  # GET /job_posts/1
-  # GET /job_posts/1.json
   def show
     @job_posts = @company.job_posts
   end
 
-  # GET /job_posts/new
   def new
     @job_post = @company.job_posts.new
   end
 
-  # GET /job_posts/1/edit
   def edit
   end
 
-  # POST /job_posts
-  # POST /job_posts.json
   def create
     @job_post = @company.job_posts.new(job_post_params)
 
@@ -44,8 +43,6 @@ class JobPostsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /job_posts/1
-  # PATCH/PUT /job_posts/1.json
   def update
     respond_to do |format|
       if @job_post.update(job_post_params)
@@ -58,8 +55,6 @@ class JobPostsController < ApplicationController
     end
   end
 
-  # DELETE /job_posts/1
-  # DELETE /job_posts/1.json
   def destroy
     @job_post.destroy
     respond_to do |format|
@@ -70,16 +65,26 @@ class JobPostsController < ApplicationController
 
   private
 
+  def set_job_applicant
+    @job_application = @job_post.job_applications.new
+  end
+
   def set_company
     @company = Company.find(params[:company_id])
   end
-    # Use callbacks to share common setup or constraints between actions.
-    def set_job_post
-      @job_post = JobPost.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def job_post_params
-      params.require(:job_post).permit(:logo, :job_title, :job_description, :job_tag, :company_id)
-    end
+  def set_job_post
+    @job_post = JobPost.find(params[:id])
+  end
+
+  def job_post_params
+    params.require(:job_post).permit(:logo, :job_title, :job_description,
+                                     :job_tag, :company_id)
+  end
+
+  def job_application_params
+    params.require(:job_application).permit(:first_name, :last_name, :email,
+                                            :resume, :link, :phone,
+                                            :cover_letter)
+  end
 end

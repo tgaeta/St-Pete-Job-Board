@@ -20,6 +20,4 @@ class JobApplication < ActiveRecord::Base
   validates :last_name, presence: true
   validates :resume, presence: true
   validates :email, presence: true
-  validates :name, presence: true
-  validates :name, presence: true
 end

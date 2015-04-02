@@ -1,0 +1,2 @@
+//= require formValidation
+//= require formValidationBootstrap

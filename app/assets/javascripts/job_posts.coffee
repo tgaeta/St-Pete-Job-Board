@@ -1,3 +1,11 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://coffeescript.org/
+$(document).ready ->
+  $('#loginForm').formValidation
+    framework: 'bootstrap'
+    icon:
+      valid: 'glyphicon glyphicon-ok'
+      invalid: 'glyphicon glyphicon-remove'
+      validating: 'glyphicon glyphicon-refresh'
+    fields:
+      username: validators: notEmpty: message: 'The username is required'
+      password: validators: notEmpty: message: 'The password is required'
+  return
