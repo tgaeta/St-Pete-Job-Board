@@ -4,6 +4,11 @@ class JobPostsController < ApplicationController
 
   # GET /job_posts
   # GET /job_posts.json
+  def apply
+    CompanyMailer.job_applicant(@company).deliver_later
+    redirect_to root_path, notice: 'sweet... you applied'
+  end
+
   def index
     @job_posts = @company.job_posts
   end

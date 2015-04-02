@@ -1,27 +1,56 @@
-<div class="container"
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
 
-<p>
-  <%= image_tag(@company.logo, class: "img-responsive") %>
-</p>
+<body>
+  <div class="container">
+    <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Job title:</strong>
-  <%= @job_post.job_title %>
-</p>
+    <p><%= image_tag(@company.logo, class: "img-responsive") %></p>
 
-<p>
-  <strong>Job description:</strong>
-  <%= @job_post.job_description %>
-</p>
+    <p><strong>Company:</strong> <%= @job_post.company.name %></p>
 
-<p>
-  <strong>Job tag:</strong>
-  <%= @job_post.job_tag %>
-</p>
+    <p><strong>Job title:</strong> <%= @job_post.job_title %></p>
 
-<p>
-  <strong>Company:</strong>
-  <%= @job_post.company.name %>
-</p>
-</div>
+    <p class="label label-info"><%= @job_post.job_tag.upcase %></p><br>
+    <br>
+
+    <p><strong>Job description:</strong> <%= @job_post.job_description %></p>
+    <!-- Button trigger modal -->
+    <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
+    "modal" type="button">Apply</button> <!-- Modal -->
+
+    <div class="modal fade" id="myModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button class="close" data-dismiss="modal" type=
+            "button"><span>&times;</span>
+            </button>
+            <h4 class="modal-title" id="myModalLabel"><%= @job_post.job_title %> at <%= @job_post.company.name %></h4>
+          </div>
+          <div class="modal-body">
+            <%= bootstrap_form_tag url: {action: "apply"} do |f| %>
+            <%= f.alert_message "Please fix the following errors." %>
+              <%= f.text_field :first_name, label: "First Name *" %>
+              <%= f.text_field :last_name %>
+              <%= f.email_field :email %>
+              <%= f.file_field :upload_resume %>
+              <%= f.text_area :cover_letter %>
+              <%= f.hidden_field :company_id, value: @company.id %>
+              <div class="modal-footer">
+                <button class="btn btn-default" data-dismiss="modal" type=
+                "button">Cancel</button>
+                <%= f.submit "Submit Application", class: "btn btn-primary" %>
+              </div>
+
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

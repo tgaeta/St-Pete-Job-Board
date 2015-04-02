@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'session/form'
   post 'session/sign_in'
   delete 'session/sign_out'
+  post 'job_posts/apply'
 
   resources :companies do
     resources :job_posts
