@@ -1,0 +1,35 @@
+# == Schema Information
+#
+# Table name: job_applications
+#
+#  id           :integer          not null, primary key
+#  first_name   :string
+#  last_name    :string
+#  email        :string
+#  resume       :string
+#  cover_letter :text
+#  phone        :string
+#  link         :string
+#  created_at   :datetime         not null
+#  updated_at   :datetime         not null
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  resume: MyString
+  cover_letter: MyText
+  phone: MyString
+  link: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  email: MyString
+  resume: MyString
+  cover_letter: MyText
+  phone: MyString
+  link: MyString

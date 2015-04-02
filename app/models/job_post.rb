@@ -13,6 +13,7 @@
 #
 
 class JobPost < ActiveRecord::Base
+  has_many :job_applications, dependent: :destroy
   belongs_to :company
   validates :job_title, presence: true
   validates :job_description, presence: true, length: { minimum: 100 }
