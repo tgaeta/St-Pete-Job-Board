@@ -1,7 +1,9 @@
 class JobPostsController < ApplicationController
   before_action :set_company
-  before_action :set_job_post, only: [:show, :edit, :update, :destroy, :apply]
-  before_action :set_job_applicant, only: [:show]
+  before_action :set_job_post, only: [:edit, :update, :destroy, :apply]
+  before_action :set_job_applicant_authorization, only: [:show]
+  before_action :require_authorization, only: [:new]
+
 
   def apply
     @job_application = @job_post.job_applications.new(job_application_params)
@@ -64,16 +66,22 @@ class JobPostsController < ApplicationController
 
   private
 
-  def set_job_applicant
+  def require_authorization
+    redirect_to root_path if params[:company_id].to_i != @company.id
+  end
+
+  def set_job_applicant_authorization
+    @job_post = JobPost.find_by(id: params[:id])
     @job_application = @job_post.job_applications.new
   end
 
   def set_company
-    @company = Company.find(params[:company_id])
+    @company = @current_user
   end
 
   def set_job_post
-    @job_post = JobPost.find(params[:id])
+    @job_post = JobPost.find_by(id: params[:id], company_id: @company.id)
+    redirect_to root_path if @job_post.blank?
   end
 
   def job_post_params
