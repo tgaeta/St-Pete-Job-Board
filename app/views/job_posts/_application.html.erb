@@ -48,6 +48,14 @@
           <%= f.url_field :link, class: "form-control", name: "website", label: "Link", placeholder: "Link to your GitHub, online portfolio, or blog." %>
         </div>
     </div>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Captcha</label>
+        <div class="col-md-8">
+            <!-- The captcha container -->
+            <div id="captchaContainer"></div>
+        </div>
+    </div>
     <%= f.hidden_field :company_id, value: @company.id %><br><br>
     <div class="modal-footer">
       <button class="btn btn-default" data-dismiss="modal" type=
@@ -63,6 +71,16 @@ $(document).ready(function() {
             valid: 'glyphicon glyphicon-ok',
             invalid: 'glyphicon glyphicon-remove',
             validating: 'glyphicon glyphicon-refresh'
+        },
+        addOns: {
+            reCaptcha2: {
+                element: 'captchaContainer',
+                language: 'en',
+                theme: 'light',
+                siteKey: '6LchxQQTAAAAAFzgKQlwwvlS5vNWTvztZds3L3EV',
+                timeout: 120,
+                message: 'The captcha is not valid'
+            }
         },
         fields: {
             firstname: {

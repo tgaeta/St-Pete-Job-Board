@@ -1,9 +1,9 @@
 $(document).ready ->
   tinymce.init
     selector: 'textarea'
-    menubar: false
-    statusbar: false
-    toolbar: 'undo redo | styleselect | bold italic'
+    menubar: true
+    statusbar: true
+    toolbar: false
     setup: (editor) ->
       editor.on 'keyup', (e) ->
         # Revalidate the coverLetter field

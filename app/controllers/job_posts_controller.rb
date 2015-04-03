@@ -9,8 +9,7 @@ class JobPostsController < ApplicationController
       CompanyMailer.job_applicant(@company).deliver_later
       redirect_to [@company, @job_post], notice: 'Your application has been successfully submitted!'
     else
-      @auto_show_modal = true
-      render :show
+      render :show, notice: 'You suck.'
     end
   end
 
