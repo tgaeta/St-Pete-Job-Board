@@ -1,16 +1,99 @@
-<%= bootstrap_form_for @job_application, id: "applyForm", url: {action: "apply"}, :html => {:multipart => true} do |f| %>
-  <%= f.alert_message "Please fix the following errors." %>
-  <%= f.text_field :first_name, label: "First Name *" %>
-  <%= f.text_field :last_name, label: "Last Name *" %>
-  <%= f.email_field :email, label: "E-mail *" %>
-  <%= f.text_field :phone, label: "Phone Number" %>
-  <%= f.file_field :resume, label: "Upload Resume *", help: ".pdf, .docx, .doc, .txt" %>
-  <%= f.text_area :cover_letter, label: "Cover Letter" %>
-  <%= f.url_field :link, label: "Link", help: "link to your github, online portfolio, blog" %>
-  <%= f.hidden_field :company_id, value: @company.id %>
-  <div class="modal-footer">
-    <button class="btn btn-default" data-dismiss="modal" type=
+
+
+
+<%= form_for @job_application, url: {action: "apply"}, :html => {:multipart => true, id: "applyForm", class: "form-horizontal"} do |f| %>
+
+    <div class="form-group">
+        <label class="col-xs-3 control-label">Full Name *</label>
+        <div class="col-md-4">
+            <%= f.text_field :first_name, label: "First Name *", class:"form-control", name: "firstname", placeholder: "First Name" %>
+        </div>
+
+        <div class="col-md-4">
+            <%= f.text_field :last_name, label: "Last Name *", class:"form-control", name: "lastname", placeholder: "Last Name" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Email *</label>
+      <div class="col-md-8">
+        <%= f.email_field :email, class: "form-control", name: "email", label: "E-mail *" %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Phone Number</label>
+        <div class="col-md-4">
+          <%= f.text_field :phone, class: "form-control", name: "phone", label: "Phone Number" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Upload Resume *</label>
+        <div class="col-md-8">
+          <%= f.file_field :resume, name: "resume" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Cover Leter</label>
+        <div class="col-md-8">
+          <%= f.text_area :cover_letter, label: "Cover Letter", class: "form-control", name: "coverLetter", rows: "3" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-xs-3 control-label">Portfolio</label>
+        <div class="col-md-8">
+          <%= f.url_field :link, class: "form-control", name: "website", label: "Link", placeholder: "Link to your GitHub, online portfolio, or blog." %>
+        </div>
+    </div>
+    <%= f.hidden_field :company_id, value: @company.id %><br><br>
+    <div class="modal-footer">
+      <button class="btn btn-default" data-dismiss="modal" type=
     "button">Cancel</button>
-    <%= f.submit "Submit Application", class: "btn btn-primary" %>
+      <%= f.submit "Submit Application", type: "submit", class: "btn btn-primary" %>
   </div>
 <% end %>
+<script>
+$(document).ready(function() {
+    $('#applyForm').formValidation({
+        framework: 'bootstrap',
+        icon: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+        fields: {
+            firstname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The first name is required'
+                    }
+                }
+            },
+            lastname: {
+                validators: {
+                    notEmpty: {
+                        message: 'The last name is required'
+                    }
+                }
+            },
+            email: {
+                validators: {
+                    notEmpty: {
+                        message: 'The email is required'
+                    }
+                }
+            },
+            resume: {
+                validators: {
+                    notEmpty: {
+                        message: 'The resume is required'
+                    }
+                }
+            }
+        }
+    });
+});
+</script>
