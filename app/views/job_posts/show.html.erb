@@ -11,7 +11,7 @@
 
     <p class="label label-info"><%= @job_post.job_tag.upcase %></p><br>
     <br>
-
+    <%= render 'social' %><br>
     <p><strong>Job description:</strong> <%= @job_post.job_description %></p>
     <!-- Button trigger modal -->
 
@@ -42,3 +42,4 @@
     })
     </script>
   <% end %>
+</div>

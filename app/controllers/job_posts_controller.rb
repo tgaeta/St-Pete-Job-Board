@@ -5,7 +5,6 @@ class JobPostsController < ApplicationController
 
   def apply
     @job_application = @job_post.job_applications.new(job_application_params)
-    # binding.pry
     if @job_application.save
       CompanyMailer.job_applicant(@company).deliver_later
       redirect_to [@company, @job_post], notice: 'Your application has been successfully submitted!'
