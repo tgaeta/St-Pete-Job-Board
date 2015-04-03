@@ -20,4 +20,5 @@ class JobApplication < ActiveRecord::Base
   validates :last_name, presence: true
   validates :resume, presence: true
   validates :email, presence: true
+  mount_uploader :resume, ResumeUploader
 end
