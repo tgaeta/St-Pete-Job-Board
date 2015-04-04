@@ -4,7 +4,7 @@
 - [x] Companies can Sign Up
 - [x] Companies can Post a Job
 - [ ] Visitors can search for a job through tags or search bar
-- [ ] Visitors can Apply to Job
+- [x] Visitors can Apply to Job
 
 
 ## User Stories
@@ -68,12 +68,12 @@
 - [ ] Search engine (make one like we did with pinterest app)
 - [x] Active admin
 - [x] Add SendGrid from Heroku
-- [ ] Visitors can Apply to Job
+- [x] Visitors can Apply to Job
 
 
 ## Risks
-- [ ] Time Management - Ensuring functionality and moving on if I have fail to meet a deadline. I can always come back.
-- [ ] Javascript - Don't know a whole lot about it
+- [x] Time Management - Ensuring functionality and moving on if I have fail to meet a deadline. I can always come back.
+- [x] Javascript - Don't know a whole lot about it
 
 ## Data / Models
 - [x] Company: name, email, password, logo, bio
