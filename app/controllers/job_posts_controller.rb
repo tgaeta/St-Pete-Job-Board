@@ -1,7 +1,8 @@
 class JobPostsController < ApplicationController
+  before_action :visitor_restricted, only: [:create, :new, :edit, :update, :destroy]
   before_action :set_company
   before_action :set_job_post, only: [:edit, :update, :destroy, :apply]
-  before_action :set_job_applicant_authorization, only: [:show]
+  before_action :set_job_applicant_authorization, only: [:show, :apply]
   before_action :require_authorization, only: [:new]
 
 
@@ -66,6 +67,10 @@ class JobPostsController < ApplicationController
 
   private
 
+  def visitor_restricted
+    redirect_to root_path if signed_in?.blank?
+  end
+
   def require_authorization
     redirect_to root_path if params[:company_id].to_i != @company.id
   end
@@ -76,12 +81,20 @@ class JobPostsController < ApplicationController
   end
 
   def set_company
-    @company = @current_user
+    if signed_in?
+      @company = @current_user
+    else
+      @company = Company.find(params[:company_id])
+    end
   end
 
   def set_job_post
-    @job_post = JobPost.find_by(id: params[:id], company_id: @company.id)
-    redirect_to root_path if @job_post.blank?
+    if signed_in?
+      @job_post = JobPost.find_by(id: params[:id], company_id: @company.id)
+      redirect_to root_path if @job_post.blank?
+    else
+      @job_post = JobPost.find(params[:id])
+    end
   end
 
   def job_post_params
