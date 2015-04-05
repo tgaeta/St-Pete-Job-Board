@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'sitemap/index'
+
   ActiveAdmin.routes(self)
   get 'session/form'
   post 'session/sign_in'
@@ -10,6 +12,7 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :sitemap, only: [:index]
 
   root 'welcome#index'
 
