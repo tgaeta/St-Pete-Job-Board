@@ -7,7 +7,7 @@ puts 'Creating companies and job posts...'
 10.times do |x|
   puts "Creating company #{x}"
   logos = %w(Birchwood.png, jannus.jpg, kahwa.jpg, madmobile.png)
-  Company.create!(logo: logos.shuffle.sample,
+  Company.create!(remote_logo_url: Faker::Company.logo,
                   name: Faker::Company.name + Faker::Company.suffix,
                   email: Faker::Internet.email,
                   url: Faker::Internet.url,
