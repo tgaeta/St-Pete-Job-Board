@@ -1,0 +1,9 @@
+<% @jobs.each do |job| %>
+  <div class="bs-callout bs-callout-primary">
+    <h4><%= link_to job.job_title + " | " + job.company.name, company_job_post_path(job.company, job) %></h4>
+    <h6><%= job.created_at.strftime("%d %b. %Y") %></h6>
+    <p><%= job.job_description.truncate(200) %>
+    <p class="label label-info"><%= job.job_tag.upcase %></p>
+  </div>
+<% end %>
+</div>
