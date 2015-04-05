@@ -10,6 +10,7 @@
 #  cover_letter :text
 #  phone        :string
 #  link         :string
+#  job_post_id  :integer
 #  created_at   :datetime         not null
 #  updated_at   :datetime         not null
 #

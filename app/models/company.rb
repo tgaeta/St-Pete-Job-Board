@@ -11,6 +11,7 @@
 #  bio             :text
 #  created_at      :datetime         not null
 #  updated_at      :datetime         not null
+#  admin           :boolean          default(FALSE)
 #
 
 class Company < ActiveRecord::Base
