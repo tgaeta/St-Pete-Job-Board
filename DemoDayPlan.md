@@ -57,15 +57,15 @@
 
 ### Users should be able to browse jobs (paginated)
 - [x] Create a JobPost model and migration
-- [ ] Create seed file for fake jobs
+- [x] Create seed file for fake jobs
 
 ## Technologies
 - [x] S3
 - [x] Carrierwave / Fog
 - [x] Environment variables (.env, dotenv gem)
-- [ ] Kaminari for pagination
+- [x] Kaminari for pagination
 - [x] bcrypt
-- [ ] Search engine (make one like we did with pinterest app)
+- [x] Search engine (make one like we did with pinterest app)
 - [x] Active admin
 - [x] Add SendGrid from Heroku
 - [x] Visitors can Apply to Job
