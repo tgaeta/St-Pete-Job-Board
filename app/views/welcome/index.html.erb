@@ -18,6 +18,7 @@
       <div id="jobs"><%= render 'jobs' %></div>
     <div class="col-md-4">
       <h2>Sidebar</h2>
+      <%= flash_messages %>
       <% if !signed_in? %>
       <p><%= link_to 'Sign In', session_form_path %></p>
       <p><%= link_to 'Sign Up', new_company_path %></p>

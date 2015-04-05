@@ -1,8 +1,6 @@
 
   <div class="container">
 
-    <p id="notice"><%= notice %></p>
-
     <p><%= image_tag(@company.logo, class: "img-responsive") %></p>
 
     <p><strong>Company:</strong> <%= @job_post.company.name %></p>
@@ -12,7 +10,7 @@
     <p class="label label-info"><%= @job_post.job_tag.upcase %></p><br>
     <br>
     <%= render 'social' %><br>
-    <p><strong>Job description:</strong> <%= @job_post.job_description %></p>
+    <p><strong>Job description:</strong> <%= @job_post.job_description.html_safe %></p>
     <!-- Button trigger modal -->
 
     <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
