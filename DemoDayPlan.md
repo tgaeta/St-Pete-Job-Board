@@ -3,7 +3,7 @@
 ## The Gist:
 - [x] Companies can Sign Up
 - [x] Companies can Post a Job
-- [ ] Visitors can search for a job through tags or search bar
+- [x] Visitors can search for a job through tags or search bar
 - [x] Visitors can Apply to Job
 
 
@@ -83,7 +83,7 @@
 - [x] Welcome
 - [x] Company
 - [x] Job Posts
-- [ ] Search
+- [x] Search (didn't need it)
 - [x] Session
 
 ##Things to Consider
