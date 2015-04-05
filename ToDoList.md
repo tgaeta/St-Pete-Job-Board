@@ -1,7 +1,8 @@
 # ToDo List for Job Board:
 
 ## Things I would like to get done before Demo Day:
-- [ ] Create a sitemap
+- [x] Create a sitemap
+- [ ] Prohibit logged-in companies from accessing new company page while signed-in
 - [ ] Create an RSS feed
 - [ ] Ajax for pagination
 - [ ] Create a 'Forgot Password' and 'Remember Me' function for users
