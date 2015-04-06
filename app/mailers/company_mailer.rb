@@ -10,6 +10,11 @@ class CompanyMailer < ApplicationMailer
   def job_applicant(company)
     @company = company
     @url = 'http://example.com/resume_link'
-    mail(to: @company.email, subject: "You have a new job application to review!")
+    mail(to: @company.email, subject: 'New Job Application to Review!')
+  end
+
+  def password_reset(company)
+    @company = company
+    mail(to: @company.email, subject: 'Password Reset')
   end
 end

@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       post 'apply', on: :member
     end
   end
-
   resources :sitemap, only: [:index]
+  resources :password_resets
   ActiveAdmin.routes(self)
 end
