@@ -9,7 +9,11 @@ class CompaniesController < ApplicationController
   end
 
   def new
-    @company = Company.new
+    if signed_in?.blank?
+      @company = Company.new
+    else
+      redirect_to root_path
+    end
   end
 
   def edit
@@ -20,7 +24,7 @@ class CompaniesController < ApplicationController
     respond_to do |format|
       if @company.save
         CompanyMailer.welcome_email(@company).deliver_later
-        format.html { redirect_to @company, notice: 'Success!' }
+        format.html { redirect_to @company, notice: 'Success! Please sign-in.' }
         format.json { render :show, status: :created, location: @company }
       else
         format.html { render :new }
