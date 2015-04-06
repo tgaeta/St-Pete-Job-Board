@@ -24,12 +24,9 @@ module ApplicationHelper
 
   def flash_messages(_opts = {})
     flash.each do |t, m|
-      concat(content_tag(:div, m,
-                         class: "alert #{bs_class(t.to_sym)} alert-dismissible",
-                         role: 'alert') do
+      concat(content_tag(:div, m, role: 'alert', class: "alert #{bs_class(t.to_sym)} alert-dismissible") do
                concat close_alert
-               concat content_tag(:i, nil,
-                                  class: "glyphicon glyphicon-
+               concat content_tag(:i, nil, class: "glyphicon glyphicon-
                                   #{bs_icon(t.to_sym)}")
                concat ' '
                concat m
