@@ -1,6 +1,7 @@
 class SessionController < ApplicationController
   def sign_in
-    company = Company.find_by(email: params[:email]).try(:authenticate, params[:password])
+    company = Company.find_by(email: params[:email]).try(:authenticate,
+                                                         params[:password])
     if company
       session[:company_id] = company.id
       flash[:notice] = "Welcome back, #{current_user.name}!"
@@ -13,7 +14,7 @@ class SessionController < ApplicationController
   def sign_out
     # Remove the user id from the session
     session[:company_id] = nil
-    flash[:notice] = "See you later!"
+    flash[:notice] = 'See you later!'
     redirect_to root_path
   end
 end

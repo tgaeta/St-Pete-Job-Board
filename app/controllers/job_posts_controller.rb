@@ -1,5 +1,6 @@
 class JobPostsController < ApplicationController
-  before_action :visitor_restricted, only: [:create, :new, :edit, :update, :destroy]
+  before_action :visitor_restricted, only: [:create, :new, :edit, :update,
+                                            :destroy]
   before_action :set_company
   before_action :set_job_post, only: [:edit, :update, :destroy, :apply]
   before_action :set_job_applicant_authorization, only: [:show, :apply]
@@ -9,9 +10,9 @@ class JobPostsController < ApplicationController
     @job_application = @job_post.job_applications.new(job_application_params)
     if @job_application.save
       CompanyMailer.job_applicant(@company).deliver_later
-      redirect_to [@company, @job_post], notice: 'Your application has been successfully submitted!'
+      redirect_to [@company, @job_post], notice: 'Thank you for applying.'
     else
-      render :show, notice: 'You suck.'
+      render :show, notice: 'An error has occurred. Please try again.'
     end
   end
 
@@ -35,11 +36,11 @@ class JobPostsController < ApplicationController
 
     respond_to do |format|
       if @job_post.save
-        format.html { redirect_to [@company, @job_post], notice: 'Job post was successfully created.' }
+        format.html { redirect_to [@company, @job_post], notice: 'Success!' }
         format.json { render :show, status: :created, location: [@company, @job_post] }
       else
         format.html { render :new }
-        format.json { render json: @job_post.errors, status: :unprocessable_entity }
+        format.json { render json: @job_post.errors, status: 'Fail.' }
       end
     end
   end
@@ -47,11 +48,11 @@ class JobPostsController < ApplicationController
   def update
     respond_to do |format|
       if @job_post.update(job_post_params)
-        format.html { redirect_to [@company, @job_post], notice: 'Job post was successfully updated.' }
+        format.html { redirect_to [@company, @job_post], notice: 'Success!' }
         format.json { render :show, status: :ok, location: @job_post }
       else
         format.html { render :edit }
-        format.json { render json: @job_post.errors, status: :unprocessable_entity }
+        format.json { render json: @job_post.errors, status: 'Fail.' }
       end
     end
   end
@@ -59,7 +60,7 @@ class JobPostsController < ApplicationController
   def destroy
     @job_post.destroy
     respond_to do |format|
-      format.html { redirect_to [@company, @job_post], notice: 'Job post was successfully destroyed.' }
+      format.html { redirect_to [@company, @job_post], notice: 'Destroyed.' }
       format.json { head :no_content }
     end
   end
