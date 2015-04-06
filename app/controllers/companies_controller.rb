@@ -32,7 +32,6 @@ class CompaniesController < ApplicationController
         format.json { render :show, status: :created, location: @company }
       else
         format.html { render :new }
-        format.json { render json: @company.errors, status: :unprocessable_entity }
       end
     end
   end
