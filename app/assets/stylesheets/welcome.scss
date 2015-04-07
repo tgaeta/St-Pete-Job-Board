@@ -1,7 +1,7 @@
 // Place all the styles related to the welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather:400,400italic,700italic);
 .bs-callout {
     padding: 20px;
     margin: 20px 0;
@@ -32,10 +32,10 @@
     color: #777;
 }
 .bs-callout-primary {
-    border-left-color: #428bca;
+    border-left-color: #F38630;
 }
 .bs-callout-primary h4 {
-    color: #428bca;
+    color: #F38630;
 }
 .bs-callout-success {
     border-left-color: #5cb85c;
@@ -61,37 +61,6 @@
 .bs-callout-info h4 {
     color: #5bc0de;
 }
-h1 {
-  font-family: 'Montserrat', sans-serif;
-}
-h2 {
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 700;
-}
-
-.bg-with-search {
-  position: relative;
-  clear: right;
-}
-
-.search-container {
-  top: calc(50% - 17px);
-  position: absolute;
-
-  .input-group {
-    padding: 10px;
-    background: rgba(255, 255, 255, 0.50);
-    border-radius: 3px;
-  }
-}
-.cd-user-modal {
-  visibility: hidden;
-  opacity: 0;
-  transition: opacity 0.3s 0, visibility 0 0.3s;
-}
-
-.cd-user-modal.is-visible {
-  visibility: visible;
-  opacity: 1;
-  transition: opacity 0.3s 0, visibility 0 0;
+.label-info {
+  background-color: #69D2E7;
 }
