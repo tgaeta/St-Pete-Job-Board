@@ -9,8 +9,7 @@
 				</div>
 			</form>
       <% if !signed_in? %>
-      <li><%= link_to 'Sign In', session_form_path %></li>
-      <li><%= link_to 'Sign Up', new_company_path %></li>
+      <li><%= link_to 'Sign Up to Post Job', new_company_path %></li>
       <% else %>
       <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
       <% end %>
@@ -24,7 +23,6 @@
 				<div class="nav-header">
           <%= link_to "SPJB", root_path, class: "nav-brand" %>
 						<a class="menu-link nav-icon" href="#"><i class="icon-menu2"></i></a>
-						<a class="btn btn-blog outline-white pull-right" href="#" data-toggle="modal" data-target="#loginModal">Login</a>
 					</div>
 			</div>
 		</div>
@@ -32,9 +30,10 @@
 			<div id="cover-image" class="image-bg animated fadeIn"></div>
 			<div class="container welcome-content">
 				<div class="middle-text">
-					<h1>HELLO, ST. PETE</h1>
-					<h2><b>St. Pete Job Board (SPJB)</b> was built <br>by <b>Tony Gaeta</b><br>during his time at <%= link_to "The Iron Yard", 'http://www.theironyard.com' %>.</h2>
+					<h1>ST. PETE JOB BOARD</h1>
+					<h2>Get hired in The Burg.</h2>
           <%= link_to "Search Jobs", '#start', class: "btn smooth-scroll" %>
+					<a class="btn btn-blog outline-orange" href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a>
 				</div>
 			</div>
 		</section>
@@ -46,6 +45,18 @@
         </div>
         <div class="col-md-8">
 					<article class="clearfix">
+						<div class="row">
+							<%= form_tag root_path([@company, @job_post]), class: "col-md-12 myform", :method => 'get', id: 'ajax_search' do %>
+								<div class="input-group">
+									<%= text_field_tag :search, params[:search], class: "form-control input-lg", placeholder: "Search jobs..." %>
+									<span class="input-group-btn">
+										<button class="btn" name="submit" type="submit">
+											<span class="input-group-btn">Search</span>
+										</button>
+									</span>
+								</div>
+			        <% end %>
+						</div>
             <div id="jobs"><%= render 'jobs' %><%= paginate @jobs %></div>
 						</p>
 					</article>
@@ -135,7 +146,7 @@
 			  <div class="modal-content">
 				 <div class="modal-header">
 					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-					<h4 class="modal-title">Login with</h4>
+					<h4 class="modal-title">Login to post a job:</h4>
 				</div>
 				<div class="modal-body">
 					<div class="box">

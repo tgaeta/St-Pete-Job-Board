@@ -1,6 +1,6 @@
 <% @jobs.each do |job| %>
   <div class="bs-callout bs-callout-primary">
-    <h4><%= link_to job.job_title + " | " + job.company.name, company_job_post_path(job.company, job) %></h4>
+    <h4><%= link_to job.job_title + " - " + job.company.name, company_job_post_path(job.company, job) %></h4>
     <h5 class="text-muted"><%= distance_of_time_in_words(job.created_at, Time.zone.now, include_seconds: true) %> ago</h6>
     <p><%= job.job_description.truncate(200).html_safe %>
     <p class="label label-info"><%= job.job_tag.upcase %></p>
