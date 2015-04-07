@@ -1,13 +1,13 @@
 <div id="home">
 	<div id="menu" class="menu-right">
+		<form class="menu-search" >
+			<div class="form-group header">
+				<i class="icon-search searchico"></i>
+				<input type="text" placeholder="Blog Search">
+				<a href="#" class="close-menu"><i class="icon-close"></i></a>
+			</div>
+		</form>
 		<ul>
-			<form class="menu-search" >
-				<div class="form-group header">
-					<i class="icon-search searchico"></i>
-					<input type="text" placeholder="Blog Search">
-					<a href="#" class="close-menu"><i class="icon-close"></i></a>
-				</div>
-			</form>
       <% if !signed_in? %>
       <li><%= link_to 'Sign Up to Post Job', new_company_path %></li>
       <% else %>
@@ -58,7 +58,6 @@
 			        <% end %>
 						</div>
             <div id="jobs"><%= render 'jobs' %><%= paginate @jobs %></div>
-						</p>
 					</article>
 				</div>
 			</div><!-- end row -->
@@ -165,7 +164,7 @@
 									</div>
 								</div>
 								<p class="text-center"><a href="">Forgot password?</a></p>
-								<input class="btn btn-block" type="button" value="Login" >
+								<input class="btn btn-block" type="button" value="Login">
 							</form>
 						</div>
 					</div>
