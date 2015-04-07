@@ -40,9 +40,6 @@
 		<div id="start" class="container content">
       <%= flash_messages %>
 			<div class="row">
-        <div class="col-md-4">
-          <h2>Sidebar</h2>
-        </div>
         <div class="col-md-8">
 					<article class="clearfix">
 						<div class="row">
@@ -57,9 +54,14 @@
 								</div>
 			        <% end %>
 						</div>
-            <div id="jobs"><%= render 'jobs' %><%= paginate @jobs %></div>
+            <div id="jobs"><%= render 'jobs' %></div>
 					</article>
 				</div>
+				<div class="col-md-4">
+          <div class="middle-text">
+						<hh>Featured Tweets:</h2>
+					</div>
+        </div>
 			</div><!-- end row -->
 		</div>
 			<footer>
@@ -131,9 +133,9 @@
 					<div class="container">
 						<p class="pull-left">Built by <a href="http://www.tonygaeta.com">Tony Gaeta.</a></p>
 						<ul class="social-links pull-right">
-							<li><a href="#link"><i class="icon-twitter"></i></a></li>
-							<li><a href="#link"><i class="icon-facebook"></i></a></li>
-							<li><a href="#link"><i class="icon-googleplus"></i></a></li>
+							<li><%= link_to '', 'http://www.twitter.com/stpeteio', class: "icon-twitter" %></li>
+							<li><%= link_to '', 'http://www.facebook.com/stpeteio', class: "icon-facebook" %></li>
+							<li><%= link_to '', 'http://plus.google.com/+stpeteio/', class: "icon-googleplus" %></li>
 						</ul>
 					</div>
 				</div>
