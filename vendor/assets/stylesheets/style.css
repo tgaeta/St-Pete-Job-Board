@@ -4,6 +4,10 @@ html * {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+.input-group-btn {
+  font-size: 12px;
+}
+
 html,body {
 	font-size: 100%;
 	font-family: "Open Sans", helvetica, arial, sans-serif;
