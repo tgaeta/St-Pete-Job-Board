@@ -9,6 +9,5 @@ Bundler.require(*Rails.groups)
 module Demoday
   class Application < Rails::Application
     config.active_record.raise_in_transactional_callbacks = true
-    config.assets.paths << Rails.root.join('vendor', 'assets')
   end
 end
