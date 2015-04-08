@@ -48,7 +48,7 @@ class JobPostsController < ApplicationController
   def update
     respond_to do |format|
       if @job_post.update(job_post_params)
-        format.html { redirect_to [@company, @job_post], notice: 'Success!' }
+        format.html { redirect_to [@company, @job_post], success: 'Congrats! Your job post has been successfully posted.' }
         format.json { render :show, status: :ok, location: @job_post }
       else
         format.html { render :edit }
@@ -72,7 +72,7 @@ class JobPostsController < ApplicationController
   end
 
   def require_authorization
-    redirect_to root_path if params[:company_id].to_i != @company.id
+    redirect_to root_path if cookies[:auth_token] != @company.auth_token
   end
 
   def set_job_applicant_authorization

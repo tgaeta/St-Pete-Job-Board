@@ -9,11 +9,11 @@ class SessionController < ApplicationController
       else
         cookies[:auth_token] = company.auth_token
       end
-      flash[:notice] = "Welcome back, #{current_user.name}!"
+      flash[:success] = "Welcome back, #{current_user.name}!"
     else
-      flash[:warning] = 'Unable to log you in with those credentials.'
+      flash[:danger] = 'Unable to log you in with those credentials.'
     end
-    redirect_to root_path
+    redirect_to new_company_job_post_path([@job_post, @company])
   end
 
   def sign_out

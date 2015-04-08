@@ -2,16 +2,16 @@ module ApplicationHelper
   # Bootstrap Flash helper method.
   def bs_class(flash_type)
     { success: 'alert-success',
-      error:   'alert-danger',
-      alert:   'alert-warning',
+      danger:   'alert-danger',
+      warning:   'alert-warning',
       notice:  'alert-info' }[flash_type] || flash_type.to_s
   end
 
   # customize icons for each flash type
   def bs_icon(flash_type)
     { success: 'ok',
-      error: 'exclamation-sign',
-      alert: 'warning-sign',
+      danger: 'exclamation-sign',
+      warning: 'warning-sign',
       notice: 'info-sign' }[flash_type] || 'question-sign'
   end
 
