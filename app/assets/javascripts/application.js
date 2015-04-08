@@ -19,7 +19,7 @@
 
 $(function () {
   // Search form.
-  $('#ajax_search').submit(function () {
+  $('#ajax_search').on("submit", function () {
     $.get(this.action, $(this).serialize(), null, 'script');
     return false;
   });

@@ -4,4 +4,5 @@
 //= require prettysocial
 //= require placeholders.min
 //= require wow.min
+//= require jscroll.min
 //= require custom
