@@ -3,13 +3,13 @@
 		<form class="menu-search" >
 			<div class="form-group header">
 				<i class="icon-search searchico"></i>
-				<input type="text" placeholder="Search Jobs">
+				<input type="text" placeholder="Search Jobs...">
 				<a href="#" class="close-menu"><i class="icon-close"></i></a>
 			</div>
 		</form>
 		<ul>
       <% if !signed_in? %>
-      <li><%= link_to 'Sign Up to Post Job', new_company_path %></li>
+      <li><a href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a></li>
       <% else %>
       <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
       <% end %>
