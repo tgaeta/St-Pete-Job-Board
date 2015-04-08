@@ -150,30 +150,32 @@
 				<div class="modal-body">
 					<div class="box">
 						<div class="form loginBox">
-							<form class="myform" method="post" action="/login" accept-charset="UTF-8">
+							<%= form_for(:session, url: session_sign_in_path, method: :post, class: "myform") do |f| %>
 								<div class="form-group">
-									<label class="control-label">Email</label>
+									<label class="control-label"></label>
 									<div class="controls">
-										<input id="email" class="form-control" type="text" placeholder="Email" name="email">
+					      		<%= f.email_field nil, class: "form-control", placeholder: "Email", name: "email", id: "email" %>
 									</div>
-								</div>
-								<div class="form-group">
-									<label class="control-label">password</label>
-									<div class="controls">
-										<input id="password" class="form-control" type="password" placeholder="Password" name="password">
-									</div>
-								</div>
-								<p class="text-center"><a href="">Forgot password?</a></p>
-								<input class="btn btn-block" type="button" value="Login">
-							</form>
+									<div class="form-group">
+										<label class="control-label"></label>
+										<div class="controls">
+					      			<%= f.password_field nil, class: "form-control", name: "password", id: "password", placeholder: "Password" %>
+										</div>
+									<%= f.label :remember_me, class: "checkbox inline" do %>
+									 	<%= f.check_box :remember_me %>
+									  <span>Remember Me</span>
+									<% end %>
+									<p class="text-center"><%= link_to "Forgot password?", new_password_reset_path %></p>
+					      <%= f.submit "Login", class: "btn btn-block" %>
+					    <% end %>
 						</div>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<div class="forgot login-footer">
-						<span>Looking to
-							 <a href="#">create an account</a>
-						</span>
+						<span>Need to
+							<%= link_to "create an account", new_company_path %>
+						?</span>
 					</div>
 				</div>
 			  </div>
