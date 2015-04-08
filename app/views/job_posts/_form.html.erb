@@ -2,8 +2,8 @@
   <%= f.alert_message "Please fix the following errors." %>
   <%= f.text_field :job_title, label: "Position Title *" %>
   <%= f.text_area :job_description, label: "Describe the Position *", help: "Minimum 100 characters" %>
-  <%= f.text_field :job_tag, label: "Tag *", help: "Tag this biotch" %>
-  <%= f.text_field :company_id, label: "Company Id" %>
+  <%= f.text_field :job_tag, label: "Tag *", help: "Industry" %>
+  <%= f.hidden_field :company_id %>
   <%= f.submit "Continue" %>
 <% end %>
 
