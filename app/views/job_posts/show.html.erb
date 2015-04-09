@@ -37,17 +37,24 @@
 			<div class="container welcome-content">
 				<div class="middle-text">
 					<h1><%= @job_post.job_title %></h1>
-					<h2><%= link_to @job_post.company.name, @job_post.company.url %></h2>
+					<h2><%= @job_post.company.name %></h2>
 				</div>
 			</div>
 		</section>
 
 		<div class="container content">
       <div class="col-md-4">
-        <%= image_tag(@company.logo, class: "img-responsive") %>
+        <div class="img-circle">
+          <%= image_tag(@company.logo, class: "img-responsive") %>
+        </div>
         <br>
-        <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
-        "modal" type="button">Apply</button>
+        <p>Share this job:</p>
+        <ul class="social-links outline">
+					<li><a href="#link"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="#link"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="#link"><i class="fa fa-linkedin"></i></a></li>
+				</ul>
+
         <!-- Modal -->
         <div class="modal fade" id="myModal" tabindex="-1">
           <div class="modal-dialog">
@@ -69,19 +76,14 @@
 			<div class="col-md-8">
 				<div class="post-head">
 					<div class="post-date">
-						<%= @job_post.created_at.strftime("%B %d, %Y") %>
+						<%= @job_post.created_at.strftime("%B %d, %Y") %> | <%= link_to @job_post.company.name, @job_post.company.url %>
 					</div>
           <br>
           <%= @job_post.job_description.html_safe %>
           <br><br>
-					<p class="label label-info"><%= @job_post.job_tag.upcase %></p>
+          <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
+          "modal" type="button">Apply</button>
 				</div>
-        <%= render 'social' %>
-				<ul class="social-links outline text-center">
-					<li><a href="#link"><i class="icon-twitter"></i></a></li>
-					<li><a href="#link"><i class="icon-facebook"></i></a></li>
-					<li><a href="#link"><i class="icon-googleplus"></i></a></li>
-				</ul>
       </div>
     </div>
   </div>
