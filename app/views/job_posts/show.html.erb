@@ -54,25 +54,7 @@
 					<li><a href="#link"><i class="fa fa-facebook"></i></a></li>
 					<li><a href="#link"><i class="fa fa-linkedin"></i></a></li>
 				</ul>
-
-        <!-- Modal -->
-        <div class="modal fade" id="myModal" tabindex="-1">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <button class="close" data-dismiss="modal" type=
-                "button"><span>&times;</span>
-                </button>
-                <h4 class="modal-title" id="myModalLabel"><%= @job_post.job_title %> at <%= @job_post.company.name %></h4>
-              </div>
-              <div class="modal-body">
-                <%= render 'application' %>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+			</div>
 			<div class="col-md-8">
 				<div class="post-head">
 					<div class="post-date">
@@ -87,4 +69,21 @@
       </div>
     </div>
   </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button class="close" data-dismiss="modal" type=
+				"button"><span>&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel"><%= @job_post.job_title %> at <%= @job_post.company.name %></h4>
+			</div>
+			<div class="modal-body">
+				<%= render 'application' %>
+			</div>
+		</div>
+	</div>
 </div>

@@ -37,7 +37,11 @@
 					<h1>ST. PETE JOB BOARD</h1>
 					<h2>Get hired in The Burg.</h2>
           <%= link_to "Search Jobs", '#start', class: "btn smooth-scroll" %>
-					<a class="btn btn-blog outline-orange" href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a>
+					<% if !signed_in? %>
+						<a class="btn btn-blog outline-orange" href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a>
+					<% else %>
+						<%= link_to "Post A Job", new_company_job_post_path([@company, @job_post]), class: "btn btn-blog outline-orange" %>
+					<% end %>
 				</div>
 			</div>
 		</section>
@@ -95,20 +99,10 @@
 										<div class="col-sm-12">
 											<div class="media">
 												<div class="media-body">
-													<h4 class="media-heading"><a href="post-video.html">But I've never been to the moon!</a></h4>
-													<p class="post-date">may 10, 2014</p>
-												</div>
-											</div>
-											<div class="media">
-												<div class="media-body">
-													<h4 class="media-heading"><a href="post-typography.html">We don't have a brig</a></h4>
-													<p class="post-date">september 27, 2014</p>
-												</div>
-											</div>
-											<div class="media">
-												<div class="media-body">
-													<h4 class="media-heading"><a href="post-image.html">Every other day it's food, food, food.</a></h4>
-													<p class="post-date">april 2, 2014</p>
+													<% @jobs.first(3).each do |job| %>
+													<h4 class="media-heading"><%= link_to job.job_title, company_job_post_path(job.company_id, job.id) %></h4>
+													<p class="post-date"><%= job.created_at.strftime("%B %d, %Y") %></p>
+													<% end %>
 												</div>
 											</div>
 										</div>

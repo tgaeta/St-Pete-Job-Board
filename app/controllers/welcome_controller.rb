@@ -7,7 +7,7 @@ class WelcomeController < ApplicationController
                             "%#{params[:search].downcase.strip}%").order('created_at DESC')
               .page(params[:page]).per(10)
     else
-      @jobs = JobPost.all.includes(:company).page(params[:page]).per(10)
+      @jobs = JobPost.all.includes(:company).order('created_at DESC').page(params[:page]).per(10)
     end
   end
 end
