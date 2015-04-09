@@ -1,34 +1,87 @@
+<div id="home">
+	<div id="menu" class="menu-right">
+		<form class="menu-search" >
+			<div class="form-group header">
+				<i class="icon-search searchico"></i>
+				<input type="text" placeholder="Search Jobs...">
+				<a href="#" class="close-menu"><i class="icon-close"></i></a>
+			</div>
+		</form>
+		<ul>
+      <% if !signed_in? %>
+      <li><a href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a></li>
+      <% else %>
+      <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
+      <% end %>
+      <% if !root_path %>
+				<li><%= link_to 'Home', root_path %></li>
+				<li><%= link_to 'About', root_path %></li>
+			<% else %>
+				<li><%= link_to 'About', root_path %></li>
+			<% end %>
+		</ul>
+	</div>
 
-  <div class="container">
+	<div id="wrap">
+		<div id="main-nav" class="">
+			<div class="container">
+				<div class="nav-header">
+          <%= link_to "SPJB", root_path, class: "nav-brand" %>
+						<a class="menu-link nav-icon" href="#"><i class="icon-menu2"></i></a>
+					</div>
+			</div>
+		</div>
 
-    <p><%= image_tag(@company.logo, class: "img-responsive") %></p>
+		<section id="hero" class="light-typo">
+			<div id="cover-image" class="image-bg2 animated fadeIn"></div>
+			<div class="container welcome-content">
+				<div class="middle-text">
+					<h1><%= @job_post.job_title %></h1>
+					<h2><%= link_to @job_post.company.name, @job_post.company.url %></h2>
+				</div>
+			</div>
+		</section>
 
-    <p><strong>Company:</strong> <%= @job_post.company.name %></p>
-
-    <p><strong>Job title:</strong> <%= @job_post.job_title %></p>
-
-    <p class="label label-info"><%= @job_post.job_tag.upcase %></p><br>
-    <br>
-    <%= render 'social' %><br>
-    <p><strong>Job description:</strong> <%= @job_post.job_description.html_safe %></p>
-    <!-- Button trigger modal -->
-
-    <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
-    "modal" type="button">Apply</button> <!-- Modal -->
-
-    <div class="modal fade" id="myModal" tabindex="-1">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button class="close" data-dismiss="modal" type=
-            "button"><span>&times;</span>
-            </button>
-            <h4 class="modal-title" id="myModalLabel"><%= @job_post.job_title %> at <%= @job_post.company.name %></h4>
-          </div>
-          <div class="modal-body">
-            <%= render 'application' %>
+		<div class="container content">
+      <div class="col-md-4">
+        <%= image_tag(@company.logo, class: "img-responsive") %>
+        <br>
+        <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
+        "modal" type="button">Apply</button>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button class="close" data-dismiss="modal" type=
+                "button"><span>&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel"><%= @job_post.job_title %> at <%= @job_post.company.name %></h4>
+              </div>
+              <div class="modal-body">
+                <%= render 'application' %>
+              </div>
+            </div>
           </div>
         </div>
+      </div>
+
+			<div class="col-md-8">
+				<div class="post-head">
+					<div class="post-date">
+						<%= @job_post.created_at.strftime("%B %d, %Y") %>
+					</div>
+          <br>
+          <%= @job_post.job_description.html_safe %>
+          <br><br>
+					<p class="label label-info"><%= @job_post.job_tag.upcase %></p>
+				</div>
+        <%= render 'social' %>
+				<ul class="social-links outline text-center">
+					<li><a href="#link"><i class="icon-twitter"></i></a></li>
+					<li><a href="#link"><i class="icon-facebook"></i></a></li>
+					<li><a href="#link"><i class="icon-googleplus"></i></a></li>
+				</ul>
       </div>
     </div>
   </div>
