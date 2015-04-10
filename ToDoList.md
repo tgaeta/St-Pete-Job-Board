@@ -4,9 +4,9 @@
 - [x] Create a sitemap
 - [x] Prohibit logged-in companies from accessing new company page while signed-in
 - [ ] Create an RSS feed
-- [ ] Ajax for pagination
+- [x] Ajax for pagination
 - [x] Create a 'Forgot Password' and 'Remember Me' function for users
-- [ ] Theme the app with a user-friendly layout and easy navigation menu
+- [x] Theme the app with a user-friendly layout and easy navigation menu
 - [ ] Friendly URLs
 - [ ] Check the security
 - [ ] Run a battery of tests
