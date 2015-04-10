@@ -7,7 +7,7 @@
 - [x] Ajax for pagination
 - [x] Create a 'Forgot Password' and 'Remember Me' function for users
 - [x] Theme the app with a user-friendly layout and easy navigation menu
-- [ ] Friendly URLs
+- [x] Friendly URLs
 - [ ] Check the security
 - [ ] Run a battery of tests
 - [ ] Get it up and running with stripe (lofty... but not likely)
