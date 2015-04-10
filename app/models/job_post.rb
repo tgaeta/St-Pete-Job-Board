@@ -18,4 +18,7 @@ class JobPost < ActiveRecord::Base
   validates :job_title, presence: true
   validates :job_description, presence: true, length: { minimum: 100 }
   validates :job_tag, presence: true
+  def to_param
+    "#{id} #{job_title}".parameterize
+  end
 end

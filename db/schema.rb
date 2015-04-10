@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150406035331) do
+ActiveRecord::Schema.define(version: 20150410212143) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,7 +45,10 @@ ActiveRecord::Schema.define(version: 20150406035331) do
     t.string   "auth_token"
     t.string   "password_reset_token"
     t.datetime "password_reset_sent_at"
+    t.string   "slug"
   end
+
+  add_index "companies", ["slug"], name: "index_companies_on_slug", using: :btree
 
   create_table "job_applications", force: :cascade do |t|
     t.string   "first_name"

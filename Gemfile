@@ -20,6 +20,7 @@ gem 'bootstrap_form'
 gem 'carrierwave', '~> 0.10.0'
 gem 'neat'
 gem 'activeadmin', github: 'activeadmin'
+gem 'friendly_id', '~> 5.1.0'
 
 group :production do
   gem 'rails_12factor'
