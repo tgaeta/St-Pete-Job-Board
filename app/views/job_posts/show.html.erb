@@ -3,7 +3,9 @@
 		<form class="menu-search" >
 			<div class="form-group header">
 				<i class="icon-search searchico"></i>
-				<input type="text" placeholder="Search Jobs...">
+				<%= form_tag root_path([@company, @job_post]), :method => 'get' do %>
+					<%= text_field_tag :search, params[:search], placeholder: "Search jobs..." %>
+				<% end %>
 				<a href="#" class="close-menu"><i class="icon-close"></i></a>
 			</div>
 		</form>
