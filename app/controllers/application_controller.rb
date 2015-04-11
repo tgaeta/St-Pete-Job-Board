@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
   end
 
   def current_user
-    @current_user ||= Company.where("auth_token =?", cookies[:auth_token]).first if cookies[:auth_token]
+    @current_user ||= Company.where('auth_token =?', cookies[:auth_token]).first if cookies[:auth_token]
   end
 
   def signed_in?
