@@ -8,6 +8,7 @@
 - [x] Create a 'Forgot Password' and 'Remember Me' function for users
 - [x] Theme the app with a user-friendly layout and easy navigation menu
 - [x] Friendly URLs
+- [x] Create a url shortening method for social share links
 - [x] Check the security
 - [ ] Run a battery of tests
 - [ ] Get it up and running with stripe (lofty... but not likely)
