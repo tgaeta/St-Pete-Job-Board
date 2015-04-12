@@ -2,65 +2,83 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,300,700|Merriweather:400,400italic,700italic);
+
 .bs-callout {
-    padding: 20px;
-    margin: 20px 0;
-    border: 1px solid #eee;
-    border-left-width: 5px;
-    border-radius: 3px;
-    font-family: 'Open Sans', sans-serif;
+  border: 1px solid #eee;
+  border-left-width: 5px;
+  border-radius: 3px;
+  font-family: 'Open Sans', sans-serif;
+  margin: 20px 0;
+  padding: 20px;
 }
+
 .bs-callout h4 {
-    margin-top: 0;
-    margin-bottom: 5px;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: 0;
+  margin-bottom: 5px;
 }
+
 .bs-callout p:last-child {
-    margin-bottom: 0;
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 0;
 }
+
 .bs-callout code {
-    border-radius: 3px;
+  border-radius: 3px;
 }
-.bs-callout+.bs-callout {
-    margin-top: -5px;
+
+.bs-callout + .bs-callout {
+  margin-top: -5px;
 }
+
 .bs-callout-default {
-    border-left-color: #777;
+  border-left-color: #777;
 }
+
 .bs-callout-default h4 {
-    color: #777;
+  color: #777;
 }
+
 .bs-callout-primary {
-    border-left-color: #F38630;
+  border-left-color: #F38630;
 }
+
 .bs-callout-primary h4 {
-    color: #F38630;
+  color: #F38630;
 }
+
 .bs-callout-success {
-    border-left-color: #5cb85c;
+  border-left-color: #5cb85c;
 }
+
 .bs-callout-success h4 {
-    color: #5cb85c;
+  color: #5cb85c;
 }
+
 .bs-callout-danger {
-    border-left-color: #d9534f;
+  border-left-color: #d9534f;
 }
+
 .bs-callout-danger h4 {
-    color: #d9534f;
+  color: #d9534f;
 }
+
 .bs-callout-warning {
-    border-left-color: #f0ad4e;
+  border-left-color: #f0ad4e;
 }
+
 .bs-callout-warning h4 {
-    color: #f0ad4e;
+  color: #f0ad4e;
 }
+
 .bs-callout-info {
-    border-left-color: #5bc0de;
+  border-left-color: #5bc0de;
 }
+
 .bs-callout-info h4 {
-    color: #5bc0de;
+  color: #5bc0de;
 }
+
 .label-info {
-  background-color: #69D2E7;
+  background-color: #69d2e7;
 }

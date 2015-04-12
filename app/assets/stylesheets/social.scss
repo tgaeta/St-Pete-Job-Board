@@ -1,0 +1,24 @@
+.social-container .links a {
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: none;
+  color: #ccc;
+  display: inline-block;
+  font-size: 22px;
+  height: 40px;
+  line-height: 40px;
+  list-style: none;
+  margin: -12px 9px 0 -8px;
+  margin-bottom: 40px;
+  padding: 0;
+  text-align: center;
+  transition: all .3s ease-out;
+  width: 40px;
+}
+
+.social-container .links a:hover {
+  background: #FA6900;
+  border-color: #FA6900;
+  color: #FFF;
+  text-decoration: none;
+}
