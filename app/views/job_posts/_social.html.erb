@@ -1,13 +1,21 @@
 <div class="social-container">
-		<div class="links">
+	<div class="links">
+		<% if Rails.env.development? %>
+			<a href="#" data-type="twitter" data-url="<%= company_job_post_url(@company, @job_post) %>" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-via="stpeteIO" class="prettySocial fa fa-twitter"></a>
+
+			<a href="#" data-type="facebook" data-url="<%= company_job_post_url(@company, @job_post) %>" data-title="Latest Job in St. Pete" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-media="<%= @logo %>" class="prettySocial fa fa-facebook"></a>
+
+			<a href="#" data-type="linkedin" data-url="<%= company_job_post_url(@company, @job_post) %>" data-title="Latest Job in St. Pete" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-via="stpeteIO" data-media="<%= @company.logo %>" class="prettySocial fa fa-linkedin"></a>
+		<% else %>
 			<a href="#" data-type="twitter" data-url="<%= Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url %>" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-via="stpeteIO" class="prettySocial fa fa-twitter"></a>
 
 			<a href="#" data-type="facebook" data-url="<%= Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url %>" data-title="Latest Job in St. Pete" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-media="<%= @logo %>" class="prettySocial fa fa-facebook"></a>
 
 			<a href="#" data-type="linkedin" data-url="<%= Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url %>" data-title="Latest Job in St. Pete" data-description="<%= @job_post.job_title %> | <%= @job_post.company.name %> | #stpeteIO #stpetejobs #stpete" data-via="stpeteIO" data-media="<%= @company.logo %>" class="prettySocial fa fa-linkedin"></a>
-		</div>
-
-		<script type="text/javascript" class="source">
-			$('.prettySocial').prettySocial();
-		</script>
+		<% end %>
 	</div>
+</div>
+
+<script type="text/javascript" class="source">
+	$('.prettySocial').prettySocial();
+</script>
