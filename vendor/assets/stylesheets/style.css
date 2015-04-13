@@ -583,7 +583,10 @@ pre {
 .content>i, .content em {
 	font-style: italic;
 }
-.content h1, .content h2, .content h3,.content h4 {
+.contact h1, {
+	font-family: 'Montserrat', sans-serif;
+}
+.content h2, .content h3,.content h4 {
 	font-family: "Open Sans", helvetica, arial, sans-serif;
 	font-weight: bold;
 	color: #383838;
