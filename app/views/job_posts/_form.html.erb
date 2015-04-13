@@ -11,7 +11,6 @@
                            id: "select_tag", label: "Job Tag *",
                            placeholder: "Industry" %>
         <%= f.text_area :job_description, label: "Describe the Position *", help: "Minimum 100 characters", rows: "8" %>
-        <%= f.hidden_field :company_id %>
         <%= f.submit "Continue" %><%= link_to 'Go Home', root_path, class: "btn btn-primary pull-right" %>
       <% end %>
     </div>

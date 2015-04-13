@@ -42,7 +42,7 @@
 					<% if !signed_in? %>
 						<a class="btn btn-blog outline-orange" href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a>
 					<% else %>
-						<%= link_to "Post A Job", new_company_job_post_path([@company, @job_post]), class: "btn btn-blog outline-orange" %>
+						<%= link_to "Post A Job", new_company_job_post_path(@current_user), class: "btn btn-blog outline-orange" %>
 					<% end %>
 				</div>
 			</div>

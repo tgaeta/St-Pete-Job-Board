@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     else
       flash[:danger] = 'Unable to log you in with those credentials.'
     end
-    redirect_to new_company_job_post_path([@job_post, @company])
+    redirect_to new_company_job_post_path(@current_user)
   end
 
   def sign_out

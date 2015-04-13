@@ -43,6 +43,8 @@ $(document).ready ->
     menubar: true
     statusbar: true
     toolbar: false
+    oninit : "setPlainText",
+    plugins : "paste"
     setup: (editor) ->
       editor.on 'keyup', (e) ->
         # Revalidate the coverLetter field
