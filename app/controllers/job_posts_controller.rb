@@ -6,9 +6,16 @@ class JobPostsController < ApplicationController
   before_action :set_job_applicant_authorization, only: [:show, :apply]
   before_action :require_authorization, only: [:new]
 
-  def shorten
-    @bitly = Bitly.client.shorten(company_job_post_url(@company, @job_post))
-    @short = @bitly.short_url
+  def job_tag
+    @job_tag = ['admin/office', 'business', 'customer service', 'education',
+                'engineering', 'finance', 'food/bevarage', 'general labor',
+                'government', 'healthcare', 'hospitality', 'human resources',
+                'internet', 'engineering', 'legal', 'manufacturing',
+                'marketing', 'media', 'nonprofit', 'real estate',
+                'retail/wholesale', 'sales', 'salon/spa/fitness', 'science',
+                'security', 'skilled trades', 'software', 'systems/networking',
+                'tech support', 'transportation', 'tv/video/radio',
+                'web design/development', 'writing', 'other']
   end
 
   def apply
