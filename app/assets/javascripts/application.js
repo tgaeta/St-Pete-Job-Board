@@ -13,18 +13,8 @@
 
 //= require jquery
 //= require jquery_ujs
+//= require jquery.turbolinks
 //= require selectize
 //= require turbolinks
 //= require vendor
 //= require_tree .
-
-$(function () {
-  // Search form.
-  $('#ajax_search').on("submit", function () {
-    $.get(this.action, $(this).serialize(), null, 'script');
-    return false;
-  });
-  $('#select_tag').selectize({
-  maxItems: 1
-  });
-});
