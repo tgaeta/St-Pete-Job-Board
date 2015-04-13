@@ -48,9 +48,9 @@
 			</div>
 		</section>
 		<div id="start" class="container content">
-      <%= flash_messages %>
 			<div class="row">
         <div class="col-md-8">
+					<%= flash_messages %>
 					<article class="clearfix">
 						<div class="row">
 							<%= form_tag root_path([@company, @job_post]), class: "col-md-12 myform", :method => 'get', id: 'ajax_search' do %>

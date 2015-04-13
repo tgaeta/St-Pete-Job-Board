@@ -46,8 +46,12 @@
 
 		<div class="container content">
       <div class="col-md-4">
-        <div class="img-circle">
-          <%= image_tag(@company.logo, class: "img-responsive") %>
+        <div>
+					<% if @current_user && @company.logo.blank? %>
+						<%= link_to "Add your logo", edit_company_path(@company.id) %>
+					<% else %>
+          	<%= image_tag(@company.logo, class: "img-responsive") %>
+					<% end %>
         </div>
         <br>
         <p>Share this job:</p>

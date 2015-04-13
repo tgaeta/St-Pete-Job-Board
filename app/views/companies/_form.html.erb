@@ -5,7 +5,7 @@
   <%= f.password_field :password, label: "Password *", help: "Must be at least 8 characters long" %>
   <%= f.password_field :password_confirmation, label: "Confirm Password *" %>
   <%= f.file_field :logo, label: "Company Logo", help: "Not required. You can always update at a later time." %>
-  <%= f.url_field :url, label: "Company Website", help: "e.g., www.google.com" %>
+  <%= f.url_field :url, :value => "http://", label: "Company Website", help: "e.g., www.google.com" %>
   <%= f.text_area :bio, label: "Company Bio" %>
   <%= f.submit "Sign-Up" %>
 <% end %>
