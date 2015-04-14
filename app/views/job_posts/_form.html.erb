@@ -1,9 +1,16 @@
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+
+        <h2 class="block"><%= link_to "SPJB", root_path %></h2>
+          <h5>Applications will be emailed to <%= @company.email %></h5>
+        </div>
+      </div>
+    </nav>
 <div class="container content">
   <div class="row">
     <div class="col-md-8 col-md-offset-2">
       <%= flash_messages %>
-      <%= image_tag("http://i.imgur.com/koylPKe.png", class: "img-responsive pull-right") %>
-      <h1>Post a Job</h1><span class="pull-right"><h5>Applications will be emailed to <%= @company.email %></h5></span>
+      <h1>Post a Job</h1>
       <%= bootstrap_form_for([@company, @job_post]) do |f| %>
         <%= f.alert_message "Please fix the following errors." %>
         <%= f.text_field :job_title, label: "Position Title *" %>
