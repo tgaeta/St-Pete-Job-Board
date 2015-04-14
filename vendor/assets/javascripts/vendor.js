@@ -5,4 +5,5 @@
 //= require placeholders.min
 //= require wow.min
 //= require jscroll.min
+//= require jquery.typist
 //= require custom

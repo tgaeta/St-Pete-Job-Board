@@ -18,6 +18,7 @@ html,body {
 
 a {
 	font-weight: bold;
+	font-family: 'Merriweather', sans-serif;
 	color: #FA6900;
 	border-bottom: 1px solid rgba(198, 70, 61, 0);
 	-webkit-transition: border 0.2s;
@@ -111,8 +112,7 @@ pre {
 #hero h2 {
 	font-family: "Merriweather", georgia, serif;
 	font-weight: 400;
-	font-style: italic;
-	font-size: 18px;
+	font-size: 24px;
 	line-height: 24px;
 }
 #hero .middle-text {

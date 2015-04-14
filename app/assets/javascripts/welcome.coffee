@@ -6,3 +6,4 @@ $ ->
   $('#ajax_search').on 'submit', ->
     $.get @action, $(this).serialize(), null, 'script'
     false
+  $('.typist').typist(text: 'Free to post.').typistPause(1000).typistRemove(5).typistAdd('search.').typistPause(1000).typistRemove(16).typistAdd('Putting St. Pete back to work.').typistStop()
