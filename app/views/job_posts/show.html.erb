@@ -45,19 +45,23 @@
 		</section>
 
 		<div class="container content">
-      <div class="col-md-4">
+      <div class="col-md-2">
         <div>
 					<% if @current_user && @company.logo.blank? %>
 						<%= link_to "Add your logo", edit_company_path(@company.id) %>
 					<% else %>
-          	<%= image_tag(@company.logo, class: "img-responsive") %>
+						<% if @company.logo.blank? %>
+							<%= image_tag('spjb1.png', class: "img-responsive") %>
+						<% else %>
+          		<%= image_tag(@company.logo, class: "img-responsive") %>
+						<% end %>
 					<% end %>
         </div>
         <br>
         <p>Share this job:</p>
 				<%= render 'social' %>
 			</div>
-			<div class="col-md-8">
+			<div class="col-md-10">
 				<div class="post-head">
 					<div class="post-date">
 						<%= @job_post.created_at.strftime("%B %d, %Y") %> | <%= link_to @job_post.company.name, @job_post.company.url %>
