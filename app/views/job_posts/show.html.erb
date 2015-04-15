@@ -11,11 +11,11 @@
 		</form>
 		<ul>
       <% if !signed_in? %>
-      <li><a href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a></li>
+      	<li><a href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a></li>
       <% else %>
-      <li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
+      	<li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
       <% end %>
-      <% if !root_path %>
+      <% if !root_path && %>
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'About', root_path %></li>
 			<% else %>
@@ -28,7 +28,6 @@
 		<div id="main-nav" class="">
 			<div class="container">
 				<div class="nav-header">
-          <%= link_to "SPJB", root_path, class: "nav-brand" %>
 						<a class="menu-link nav-icon" href="#"><i class="icon-menu2"></i></a>
 					</div>
 			</div>
@@ -47,7 +46,7 @@
 		<div class="container content">
       <div class="col-md-2">
         <div>
-					<% if @current_user.id == @job_post.company.id && @company.logo.blank? %>
+					<% if @current_user == @job_post.company && @company.logo.blank? %>
 						<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
 					<% elsif @job_post.company.logo.blank? %>
 						<%= image_tag('spjb1.png', class: "img-responsive") %>
