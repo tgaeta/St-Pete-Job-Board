@@ -47,14 +47,12 @@
 		<div class="container content">
       <div class="col-md-2">
         <div>
-					<% if @current_user && @company.logo.blank? %>
-						<%= link_to "Add your logo", edit_company_path(@company.id) %>
+					<% if @current_user.id == @job_post.company.id && @company.logo.blank? %>
+						<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
+					<% elsif @job_post.company.logo.blank? %>
+						<%= image_tag('spjb1.png', class: "img-responsive") %>
 					<% else %>
-						<% if @company.logo.blank? %>
-							<%= image_tag('spjb1.png', class: "img-responsive") %>
-						<% else %>
-          		<%= image_tag(@company.logo, class: "img-responsive") %>
-						<% end %>
+						<%= image_tag(@job_post.company.logo, class: "img-responsive") %>
 					<% end %>
         </div>
         <br>
