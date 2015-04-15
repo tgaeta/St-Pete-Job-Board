@@ -35,21 +35,34 @@
 		</section>
 
 		<div class="container content">
-      <div class="col-md-2">
-        <div>
-					<% if @current_user == @job_post.company && @company.logo.blank? %>
-						<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
-					<% elsif @job_post.company.logo.blank? %>
-						<%= image_tag('spjb1.png', class: "img-responsive") %>
-					<% else %>
-						<%= image_tag(@job_post.company.logo, class: "img-responsive") %>
-					<% end %>
-        </div>
-        <br>
-        <p>Share this job:</p>
-				<%= render 'social' %>
+      <div class="col-md-3">
+				<div class="cards">
+	        <div class="card">
+	          <div class="card-copy">
+							<div>
+								<% if @current_user == @job_post.company && @company.logo.blank? %>
+									<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
+								<% elsif @job_post.company.logo.blank? %>
+									<%= image_tag('SPJB.png', class: "center-block", id: 'logoshow') %>
+								<% else %>
+									<%= image_tag(@job_post.company.logo, class: "img-responsive") %>
+								<% end %>
+			        </div>
+	          </div>
+	        </div>
+	      </div>
+				<div class="cards">
+					<div class="card">
+						<div class="card-header">
+							Share this job
+						</div>
+						<div class="card-copy">
+							<%= render 'social' %>
+						</div>
+					</div>
+				</div>
 			</div>
-			<div class="col-md-10">
+			<div class="col-md-9">
 				<div class="post-head">
 					<div class="post-date">
 						<%= @job_post.created_at.strftime("%B %d, %Y") %> | <%= link_to @job_post.company.name, @job_post.company.url %>
