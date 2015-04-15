@@ -1,21 +1,12 @@
 <div id="home">
 	<div id="menu" class="menu-right">
-		<form class="menu-search" >
-			<div class="form-group header">
-				<i class="icon-search searchico"></i>
-				<%= form_tag root_path([@company, @job_post]), :method => 'get' do %>
-					<%= text_field_tag :search, params[:search], placeholder: "Search jobs..." %>
-				<% end %>
-				<a href="#" class="close-menu"><i class="icon-close"></i></a>
-			</div>
-		</form>
 		<ul>
       <% if !signed_in? %>
       	<li><a href="#" data-toggle="modal" data-target="#loginModal">Post A Job</a></li>
       <% else %>
       	<li><%= link_to 'Sign Out', session_sign_out_path, method: :delete %></li>
       <% end %>
-      <% if !root_path && %>
+      <% if current_page?(root_path) == false %>
 				<li><%= link_to 'Home', root_path %></li>
 				<li><%= link_to 'About', root_path %></li>
 			<% else %>
