@@ -51,16 +51,6 @@
 	          </div>
 	        </div>
 	      </div>
-				<div class="cards">
-					<div class="card">
-						<div class="card-header">
-							Share this job
-						</div>
-						<div class="card-copy">
-							<%= render 'social' %>
-						</div>
-					</div>
-				</div>
 			</div>
 			<div class="col-md-9">
 				<%= flash_messages %>
@@ -68,7 +58,8 @@
 					<div class="post-date">
 						<%= @job_post.created_at.strftime("%B %d, %Y") %> | <%= link_to @job_post.company.name, @job_post.company.url %>
 					</div>
-          <br>
+					<br>
+					<%= render 'social' %>
           <%= @job_post.job_description.html_safe %>
           <br><br>
           <button class="btn btn-primary btn-lg" data-target="#myModal" data-toggle=
