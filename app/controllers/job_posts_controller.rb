@@ -9,7 +9,7 @@ class JobPostsController < ApplicationController
   def apply
     @job_application = @job_post.job_applications.new(job_application_params)
     if @job_application.save
-      CompanyMailer.job_applicant(@company).deliver_later
+      CompanyMailer.job_applicant(@job_application).deliver_later
       redirect_to [@company, @job_post], notice: 'Thank you for applying.'
     else
       render :show, notice: 'An error has occurred. Please try again.'

@@ -16,7 +16,7 @@
 #
 
 class JobApplication < ActiveRecord::Base
-  belongs_to :job_posts
+  belongs_to :job_post
   validates :first_name, presence: true
   validates :last_name, presence: true
   validates :resume, presence: true
