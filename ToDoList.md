@@ -11,4 +11,3 @@
 - [x] Create a url shortening method for social share links
 - [x] Check the security
 - [ ] Run a battery of tests
-- [ ] Get it up and running with stripe (lofty... but not likely)
