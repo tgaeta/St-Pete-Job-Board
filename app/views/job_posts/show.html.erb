@@ -63,6 +63,7 @@
 				</div>
 			</div>
 			<div class="col-md-9">
+				<%= flash_messages %>
 				<div class="post-head">
 					<div class="post-date">
 						<%= @job_post.created_at.strftime("%B %d, %Y") %> | <%= link_to @job_post.company.name, @job_post.company.url %>
