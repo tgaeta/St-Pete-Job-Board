@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Demoday</title>
+  <title>St. Pete Job Board (SPJB) | stpeteIO</title>
   <%= csrf_meta_tags %>
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" type="text/css" href=
   "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href=
+  "https://maxcdn.bootstrapcdn.com/bootswatch/3.3.0/sandstone/bootstrap.min.css">
   <link rel="stylesheet" type="text/css" href=
   "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <%= stylesheet_link_tag 'application' %>
@@ -15,6 +17,16 @@
   </script>
   <script type="text/javascript" src=
   "//tinymce.cachefly.net/4.1/tinymce.min.js"></script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-62237803-1', 'auto');
+  ga('send', 'pageview');
+
+  </script>
 </head>
 <body>
 <%= yield %>
