@@ -83,11 +83,19 @@
 								<div class="stats">
 									<div class="line">
 										<span class="counter"><%= @jobs.total_count %></span>
-										<span class="caption">Jobs</span>
+										<% if @jobs.total_count == 1 %>
+											<span class="caption">Job</span>
+										<% else %>	
+											<span class="caption">Jobs</span>
+										<% end %>	
 									</div>
 									<div class="line">
 										<span class="counter"><%= @companies.count %></span>
-										<span class="caption">Companies</span>
+										<% if @companies.count == 1 %>
+											<span class="caption">Company</span>
+										<% else %>	
+											<span class="caption">Companies</span>
+										<% end %>
 									</div>
 								</div>
 							</div>
@@ -113,7 +121,7 @@
 				</div>
 				<div class="copyright">
 					<div class="container">
-						<p class="pull-left">Built by <a href="http://www.tonygaeta.com">Tony Gaeta.</a></p>
+						<p class="pull-left">Built by <a href="http://www.tonygaeta.com">Tony Gaeta.</a> © Copyright 2015</p>
 						<ul class="social-links pull-right">
 							<li><%= link_to '', 'http://www.twitter.com/stpeteio', class: "icon-twitter" %></li>
 							<li><%= link_to '', 'http://www.facebook.com/stpeteio', class: "icon-facebook" %></li>
