@@ -33,21 +33,16 @@
 
 		<div class="container content">
       <div class="col-md-3">
-				<div class="cards">
-	        <div class="card">
-	          <div class="card-copy">
-							<div>
-								<% if @current_user == @job_post.company && @company.logo.blank? %>
-									<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
-								<% elsif @job_post.company.logo.blank? %>
-									<%= image_tag('SPJB.png', class: "center-block", id: 'logoshow') %>
-								<% else %>
-									<%= image_tag(@job_post.company.logo, class: "img-responsive") %>
-								<% end %>
-			        </div>
-	          </div>
-	        </div>
-	      </div>
+				<div>
+					<% if @current_user == @job_post.company && @company.logo.blank? %>
+						<%= link_to "Add your logo", edit_company_path(@current_user.id) %>
+					<% elsif @job_post.company.logo.blank? %>
+						<%= image_tag('SPJB.png', class: "img-responsive", id: 'logoshow') %>
+					<% else %>
+						<%= image_tag(@job_post.company.logo, class: "img-responsive") %>
+					<% end %>
+					<br>
+        </div>
 			</div>
 			<div class="col-md-9">
 				<%= flash_messages %>
@@ -83,3 +78,46 @@
 		</div>
 	</div>
 </div>
+
+<div class="modal fade login" id="loginModal" aria-hidden="true">
+		  <div class="modal-dialog login">
+			  <div class="modal-content">
+				 <div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+					<h4 class="modal-title">Login to post a job:</h4>
+				</div>
+				<div class="modal-body">
+					<div class="box">
+						<div class="form loginBox">
+							<%= form_for(:session, url: session_sign_in_path, method: :post, class: "myform") do |f| %>
+								<div class="form-group">
+									<label class="control-label"></label>
+									<div class="controls">
+					      		<%= f.email_field nil, class: "form-control", placeholder: "Email", name: "email", id: "email" %>
+									</div>
+									<div class="form-group">
+										<label class="control-label"></label>
+										<div class="controls">
+					      			<%= f.password_field nil, class: "form-control", name: "password", id: "password", placeholder: "Password" %>
+										</div>
+									<%= f.label :remember_me, class: "checkbox inline" do %>
+									 	<%= f.check_box :remember_me %>
+									  <span>Remember Me</span>
+									<% end %>
+									<p class="text-center"><%= link_to "Forgot password?", new_password_reset_path %></p>
+					      <%= f.submit "Login", class: "btn btn-block" %>
+					    <% end %>
+						</div>
+					</div>
+				</div>
+				<div class="modal-footer">
+					<div class="forgot login-footer">
+						<span>Need to
+							<%= link_to "create an account", new_company_path %>
+						?</span>
+					</div>
+				</div>
+			  </div>
+		  </div>
+	  </div>
+	</div>
