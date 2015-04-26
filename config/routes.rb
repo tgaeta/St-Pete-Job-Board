@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   get 'sitemap/index'
-  get 'session/form'
+
   post 'session/sign_in'
   delete 'session/sign_out'
 

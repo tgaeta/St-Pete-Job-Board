@@ -1,3 +1,5 @@
+<title>St. Pete Job Board (SPJB) | stpete.io</title>
+<meta name="Description" content="Free to post. Free to Search. St Pete Job Board. Putting St Pete back to work.">
 <div id="home">
 	<div id="menu" class="menu-right">
 		<form class="menu-search" >
@@ -107,7 +109,7 @@
 											<div class="media">
 												<div class="media-body">
 													<% @jobs.first(3).each do |job| %>
-													<h4 class="media-heading"><%= link_to job.job_title, company_job_post_path(job.company_id, job.id) %></h4>
+													<h4 class="media-heading"><%= link_to job.job_title, company_job_post_path(job.company, job) %></h4>
 													<p class="post-date"><%= job.created_at.strftime("%B %d, %Y") %></p>
 													<% end %>
 												</div>
