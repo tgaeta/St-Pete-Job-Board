@@ -45,4 +45,4 @@ Company.destroy_all
 #                                      Faker::Lorem.paragraph(3),
 #                     job_tag: tags.shuffle.sample)
 #   end
-end
+# end
