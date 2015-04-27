@@ -3,8 +3,7 @@ class CompanyMailer < ApplicationMailer
 
   def welcome_email(company)
     @company = company
-    @url = 'http://example.com/login'
-    mail(to: @company.email, subject: 'Welcome to My Awesome Site')
+    mail(to: @company.email, subject: 'Welcome to the SPJB!')
   end
 
   def job_applicant(job_application)

@@ -167,9 +167,7 @@ ul li {
 					<td>
 						<h1>You have a new applicant for your <%=  @job_application.job_post.job_title %> posting!</h1>
             <p>Applicant Name: <%= @job_application.first_name %> <%=  @job_application.last_name %></p>
-            <p>Phone: <%= @job_application.phone %></p>
             <p>Email: <%= @job_application.email %></p>
-            <p>Portfolio: <%= @job_application.link %></p>
             <p>----------------------------------------</p>
             <p>Cover Letter:</p>
             <% if @job_application.cover_letter.blank? %>
