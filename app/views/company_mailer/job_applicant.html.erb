@@ -180,7 +180,7 @@ ul li {
             <br>
             <p>----------------------------------------</p>
             <br>
-						<p><%= link_to "View the job post on SPJB", company_job_post_path(@job_application.job_post, @company), class: "btn-primary" %></p>
+						<p><%= link_to "View the job post on SPJB", 'https://www.stpete.io' + company_job_post_path(@company, @job_application.job_post), class: "btn-primary" %></p>
 						<p><%= link_to "Follow @stpeteIO on Twitter", 'http://twitter.com/stpeteIO', class: "btn-primary" %></p>
 					</td>
 				</tr>
