@@ -8,7 +8,7 @@ ActiveAdmin.register JobPost do
   #
   # or
   #
-permit_params do
+  permit_params do
     permitted = [:logo, :job_title, :job_description, :job_tag, :company_id]
   end
 

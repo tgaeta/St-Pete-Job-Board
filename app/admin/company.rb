@@ -8,11 +8,9 @@ ActiveAdmin.register Company do
   #
   # or
   #
-  # permit_params do
-  #   permitted = [:permitted, :attributes]
-  #   permitted << :other if resource.something?
-  #   permitted
-  # end
+  permit_params do
+    permitted = [:id, :name, :email, :password_digest, :url, :logo, :bio, :created_at, :updated_at]
+  end
 
 
 end
