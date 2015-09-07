@@ -24,6 +24,7 @@ gem 'activeadmin', github: 'activeadmin'
 gem 'friendly_id', '~> 5.1.0'
 gem 'bitly', '~> 0.10.4'
 gem 'selectize-rails'
+gem 'haml', '~> 4.0.5'
 
 group :production do
   gem 'rails_12factor'

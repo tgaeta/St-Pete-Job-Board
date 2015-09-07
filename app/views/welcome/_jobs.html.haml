@@ -1,0 +1,20 @@
+- if @jobs.blank?
+  %p
+    '#{"#{params[:search]}"}' did not match any jobs in our database.
+- else
+  - if !params[:search].blank?
+    - if @jobs.count == 1
+      %p
+        '#{"#{params[:search]}"}' returned #{@jobs.count} job.
+    - else
+      %p
+        '#{"#{params[:search]}"}' returned #{@jobs.count} jobs.
+  - @jobs.each do |job|
+    .bs-callout.bs-callout-primary
+      %h4= link_to job.job_title + " - " + job.company.name, company_job_post_path(job.company, job)
+      %h5.text-muted
+        = distance_of_time_in_words(job.created_at, Time.zone.now, include_seconds: true)
+        ago
+      %p= job.job_description.truncate(200).html_safe
+      %p.label.label-info= link_to "#{job.job_tag.upcase}", root_path(search: job.job_tag)
+= paginate @jobs

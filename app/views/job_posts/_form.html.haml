@@ -1,0 +1,33 @@
+%nav.navbar.navbar-default.navbar-static-top
+  .container
+    %br/
+    = link_to image_tag('SPJB.png', class: "img-responsive", id: 'logo2'), |
+      root_path                                                            |
+  %br/
+.container.content
+  .col-md-3
+    .cards
+      .card
+        .card-header
+          Hello, #{@company.name}
+        .card-copy
+          %p
+            All applications will be forwarded to #{@company.email}.
+    .cards
+      .card
+        .card-header
+          Notice!
+        .card-copy
+          %p SPJB is only for jobs located in St. Pete. Any job located outside of St. Pete will be deleted.
+  .col-md-8
+    = flash_messages
+    = bootstrap_form_for([@company, @job_post]) do |f|
+      = f.alert_message "Please fix the following errors."
+      = f.text_field :job_title, label: "Position Title", help: "e.g. Software Engineer"
+      = f.label "Tag", label: "Job Tag"
+      = f.hidden_field :job_tag, value: "", |
+        id: "select_tag", label: "Job Tag", |
+        placeholder: "Industry"             |
+      = f.text_area :job_description, label: "Job Description", help: "Minimum 100 characters", rows: "8"
+      = f.submit "Continue"
+      = link_to 'Go Home', root_path, class: "btn btn-primary pull-right"
