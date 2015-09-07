@@ -8,5 +8,3 @@
       %a.prettySocial.fa.fa-twitter{"data-description" => "#{@job_post.job_title} | #{@job_post.company.name} | #stpeteIO #stpetejobs #stpete", "data-type" => "twitter", "data-url" => Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url, "data-via" => "stpeteIO", :href => "#"}
       %a.prettySocial.fa.fa-facebook{"data-description" => "#{@job_post.job_title} | #{@job_post.company.name} | #stpeteIO #stpetejobs #stpete", "data-media" => @logo, "data-title" => "Latest Job in St. Pete", "data-type" => "facebook", "data-url" => Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url, :href => "#"}
       %a.prettySocial.fa.fa-linkedin{"data-description" => "#{@job_post.job_title} | #{@job_post.company.name} | #stpeteIO #stpetejobs #stpete", "data-media" => @company.logo, "data-title" => "Latest Job in St. Pete", "data-type" => "linkedin", "data-url" => Bitly.client.shorten(company_job_post_url(@company, @job_post)).short_url, "data-via" => "stpeteIO", :href => "#"}
-:javascript
-  $('.prettySocial').prettySocial();
