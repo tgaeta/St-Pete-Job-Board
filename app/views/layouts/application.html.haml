@@ -1,0 +1,24 @@
+!!!
+%html
+  %head
+    = csrf_meta_tags
+    %meta{:content => "jobs in st petersburg fl, st pete jobs, st pete, st petersburg, careers in st pete, jobs in st pete, st pete job board, 727 jobs, dtsp jobs, downtown st pete", :name => "Keywords"}/
+    %meta{:content => "width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no", :name => "viewport"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css", :rel => "stylesheet", :type => "text/css"}/
+    %link{:href => "//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css", :rel => "stylesheet", :type => "text/css"}/
+    = stylesheet_link_tag 'application'
+    = favicon_link_tag 'favicon.png'
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js", :type => "text/javascript"}
+      :cdata
+    %script{:src => "//tinymce.cachefly.net/4.1/tinymce.min.js", :type => "text/javascript"}
+    :javascript
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62237803-1', 'auto');
+      ga('send', 'pageview');
+  %body
+    = yield
