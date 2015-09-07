@@ -17,7 +17,7 @@ class JobPostsController < ApplicationController
   end
 
   def index
-    @job_posts = @company.job_posts
+    redirect_to root_path
   end
 
   def show
