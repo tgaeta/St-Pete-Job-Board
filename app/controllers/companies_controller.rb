@@ -2,10 +2,11 @@ class CompaniesController < ApplicationController
   before_action :set_company, only: [:show, :edit, :update, :destroy]
 
   def index
-    @companies = Company.all
+    redirect_to root_path
   end
 
   def show
+    redirect_to root_path
   end
 
   def new
