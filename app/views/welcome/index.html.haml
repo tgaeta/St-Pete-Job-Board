@@ -47,7 +47,10 @@
                     %button.btn{:name => "submit", :type => "submit"}
                       %span.input-group-btn Search
             #jobs
+            - if flash_messages
               = flash_messages
+              = render 'jobs'
+            - else
               = render 'jobs'
         .col-md-4
           .middle-text
